@@ -729,41 +729,7 @@
 
     <div class="about-section-head">// DATA SOURCE</div>
     <div class="about-body">
-      GIFs are fetched live from the <strong>GIPHY Search API</strong> (top 30 results
-      per keyword, PG rating). The building height for each keyword reflects
-      how many distinct GIFs GIPHY has indexed for that term — a proxy for
-      how thoroughly internet culture has processed the concept into visual shorthand.
-    </div>
-
-    <div class="about-section-head">// WIKIPEDIA EXTRACTION</div>
-    <div class="about-body">
-      <strong>Wikipedia pageview data</strong> (Oct 2023 – Mar 2026) was pulled via
-      the Wikimedia REST API for each keyword's primary article. Monthly view
-      counts were used to establish <strong>cultural attention spikes</strong> — moments
-      when a term surged in public consciousness. Keywords were categorised into
-      districts partly by cross-referencing which Wikipedia article clusters
-      linked to one another, revealing thematic proximity. For compound terms
-      (e.g. "Fake News", "Climate Change") the most-viewed disambiguation target
-      was used. Wikipedia views serve as a slow-burn baseline: they capture
-      sustained interest rather than reactive news spikes.
-    </div>
-
-    <div class="about-section-head">// GDELT EXTRACTION</div>
-    <div class="about-body">
-      <strong>GDELT (Global Database of Events, Language, and Tone)</strong> news
-      coverage timelines were queried via the GDELT DOC 2.0 API across the same
-      Oct 2023 – Mar 2026 window. For each keyword, article volume per month
-      was extracted alongside the average <strong>tone score</strong> (negative = crisis
-      framing, positive = celebratory coverage). This produced a signal of
-      <strong>media saturation</strong> — how much journalistic machinery a concept
-      has generated — independent of how the internet has visually processed it.
-      <br><br>
-      The gap between GDELT saturation and GIPHY density is the interesting
-      signal: a keyword with massive news coverage but sparse GIF culture
-      (e.g. "Ceasefire") suggests the internet has not yet absorbed it into
-      visual reflex. Conversely, keywords with dense GIF libraries but lower
-      news coverage (e.g. "Boredom", "Scrolling") have become cultural
-      vocabulary without needing a news event to drive them.
+      32 terms selected by the designer to represent the landscape of public attention between 2023 and 2026 — spanning conflict, politics, technology, and popular culture.
     </div>
   </div>
 </div>
