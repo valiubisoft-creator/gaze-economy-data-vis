@@ -235,7 +235,7 @@
 
     .hdr-title {
       font-family: 'Press Start 2P', monospace;
-      font-size: 10px;
+      font-size: 12px;
       color: var(--cyan);
       text-shadow: 0 0 8px var(--cyan);
       letter-spacing: 1px;
@@ -243,7 +243,7 @@
 
     .hdr-meta {
       font-family: 'Space Mono', monospace;
-      font-size: 9px; color: var(--dim);
+      font-size: 11px; color: var(--dim);
       letter-spacing: 1.5px;
       flex: 1;
       text-align: center;
@@ -256,7 +256,7 @@
 
     .hdr-hint {
       font-family: 'Space Mono', monospace;
-      font-size: 9px; color: var(--dim);
+      font-size: 11px; color: var(--dim);
       letter-spacing: 3px;
     }
 
@@ -382,7 +382,7 @@
     /* cluster name sits inside the label zone */
     .cluster-name {
       font-family: 'Press Start 2P', monospace;
-      font-size: 6px;
+      font-size: 8px;
       letter-spacing: 2px;
       text-align: center;
       height: var(--label-h);
@@ -450,7 +450,7 @@
     */
     .kw-label {
       font-family: 'Space Mono', monospace;
-      font-size: 8px;
+      font-size: 10px;
       font-weight: 400;
       letter-spacing: 0.5px;
       white-space: nowrap;
@@ -574,21 +574,21 @@
 
     .about-title {
       font-family: 'Press Start 2P', monospace;
-      font-size: 13px; color: var(--cyan);
+      font-size: 15px; color: var(--cyan);
       text-shadow: 0 0 10px var(--cyan);
       line-height: 1.7;
     }
 
     .about-section-head {
       font-family: 'Press Start 2P', monospace;
-      font-size: 8px; color: var(--cyan);
+      font-size: 10px; color: var(--cyan);
       letter-spacing: 2px; opacity: 0.7;
       margin-bottom: -8px;
     }
 
     .about-body {
       font-family: 'Space Mono', monospace;
-      font-size: 11px; line-height: 1.85;
+      font-size: 13px; line-height: 1.85;
       color: #8899bb;
     }
 
@@ -617,9 +617,9 @@
 
     .legend-text {
       font-family: 'Space Mono', monospace;
-      font-size: 10px; line-height: 1.6; color: #7a8aaa;
+      font-size: 12px; line-height: 1.6; color: #7a8aaa;
     }
-    .legend-text strong { color: var(--text); font-size: 10px; }
+    .legend-text strong { color: var(--text); font-size: 12px; }
   </style>
 </head>
 <body>
@@ -779,9 +779,40 @@
     <div class="about-section-head">// DATA SOURCE</div>
     <div class="about-body">
       GIFs are fetched live from the <strong>GIPHY Search API</strong> (top 30 results
-      per keyword, PG rating). Data also draws on <strong>Wikipedia pageview metrics</strong>
-      and <strong>GDELT news coverage timelines</strong> spanning Oct 2023 – Mar 2026 to
-      contextualise each keyword's attention footprint.
+      per keyword, PG rating). The building height for each keyword reflects
+      how many distinct GIFs GIPHY has indexed for that term — a proxy for
+      how thoroughly internet culture has processed the concept into visual shorthand.
+    </div>
+
+    <div class="about-section-head">// WIKIPEDIA EXTRACTION</div>
+    <div class="about-body">
+      <strong>Wikipedia pageview data</strong> (Oct 2023 – Mar 2026) was pulled via
+      the Wikimedia REST API for each keyword's primary article. Monthly view
+      counts were used to establish <strong>cultural attention spikes</strong> — moments
+      when a term surged in public consciousness. Keywords were categorised into
+      districts partly by cross-referencing which Wikipedia article clusters
+      linked to one another, revealing thematic proximity. For compound terms
+      (e.g. "Fake News", "Climate Change") the most-viewed disambiguation target
+      was used. Wikipedia views serve as a slow-burn baseline: they capture
+      sustained interest rather than reactive news spikes.
+    </div>
+
+    <div class="about-section-head">// GDELT EXTRACTION</div>
+    <div class="about-body">
+      <strong>GDELT (Global Database of Events, Language, and Tone)</strong> news
+      coverage timelines were queried via the GDELT DOC 2.0 API across the same
+      Oct 2023 – Mar 2026 window. For each keyword, article volume per month
+      was extracted alongside the average <strong>tone score</strong> (negative = crisis
+      framing, positive = celebratory coverage). This produced a signal of
+      <strong>media saturation</strong> — how much journalistic machinery a concept
+      has generated — independent of how the internet has visually processed it.
+      <br><br>
+      The gap between GDELT saturation and GIPHY density is the interesting
+      signal: a keyword with massive news coverage but sparse GIF culture
+      (e.g. "Ceasefire") suggests the internet has not yet absorbed it into
+      visual reflex. Conversely, keywords with dense GIF libraries but lower
+      news coverage (e.g. "Boredom", "Scrolling") have become cultural
+      vocabulary without needing a news event to drive them.
     </div>
   </div>
 </div>
