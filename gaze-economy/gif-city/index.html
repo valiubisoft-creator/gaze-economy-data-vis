@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -264,60 +265,14 @@
     #eye-btn {
       background: none; border: none;
       cursor: pointer;
-      padding: 4px;
+      padding: 0;
       display: flex; align-items: center;
       position: relative;
+      filter: drop-shadow(0 0 4px var(--cyan));
+      transition: filter 0.2s;
     }
-    #eye-btn:hover .eye-outline { stroke: #fff; }
-    #eye-btn:hover .eye-iris   { stroke: #fff; }
-    #eye-btn:hover .eye-pupil  { fill:  #fff; }
-
-    /* eye outline — static */
-    .eye-outline {
-      stroke: var(--cyan);
-      stroke-width: 1.5;
-      fill: none;
-      filter: drop-shadow(0 0 3px var(--cyan));
-      transition: stroke 0.2s;
-    }
-
-    /* iris blinks */
-    @keyframes iris-blink {
-      0%,85%,100% { transform: scaleY(1); }
-      92% { transform: scaleY(0.04); }
-    }
-    .eye-iris {
-      stroke: var(--cyan); stroke-width: 1.5; fill: none;
-      transform-origin: 16px 11px;
-      animation: iris-blink 4s ease-in-out infinite;
-      transition: stroke 0.2s;
-    }
-
-    /* pupil scans left-right and pulses */
-    @keyframes pupil-scan {
-      0%   { transform: translateX(0)    scale(1); }
-      20%  { transform: translateX(-3px) scale(0.85); }
-      50%  { transform: translateX(3px)  scale(1); }
-      80%  { transform: translateX(-2px) scale(0.9); }
-      100% { transform: translateX(0)    scale(1); }
-    }
-    .eye-pupil {
-      fill: var(--cyan);
-      transform-origin: 16px 11px;
-      animation: pupil-scan 3s ease-in-out infinite;
-      transition: fill 0.2s;
-      filter: drop-shadow(0 0 2px var(--cyan));
-    }
-
-    /* lid flap over iris during blink */
-    @keyframes lid-blink {
-      0%,85%,100% { transform: scaleY(0); }
-      92% { transform: scaleY(1); }
-    }
-    .eye-lid {
-      fill: var(--bg);
-      transform-origin: 16px 11px;
-      animation: lid-blink 4s ease-in-out infinite;
+    #eye-btn:hover {
+      filter: drop-shadow(0 0 8px var(--cyan)) brightness(1.3);
     }
 
     /* ── city wrapper ── */
@@ -656,18 +611,14 @@
     <div class="hdr-left">
       <!-- animated eye — opens about modal -->
       <button id="eye-btn" title="About this project" aria-label="About">
-        <svg width="36" height="24" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- outer eye shape -->
-          <path class="eye-outline"
-            d="M1 11 C7 2 25 2 31 11 C25 20 7 20 1 11 Z"/>
-          <!-- iris (blinks) -->
-          <circle class="eye-iris" cx="16" cy="11" r="5.5"/>
-          <!-- lid covers iris during blink -->
-          <path class="eye-lid"
-            d="M10.5 11 C12 7 20 7 21.5 11 C20 15 12 15 10.5 11 Z"/>
-          <!-- pupil (scans) -->
-          <circle class="eye-pupil" cx="16" cy="11" r="2.2"/>
-        </svg>
+        <lottie-player
+          src="wired-outline-69-eye-hover-blink.json"
+          background="transparent"
+          speed="1"
+          style="width:36px;height:36px"
+          loop
+          autoplay>
+        </lottie-player>
       </button>
       <div class="hdr-title">GAZE ECONOMY</div>
     </div>
