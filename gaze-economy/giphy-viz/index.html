@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gaze Economy — Visual Codification Index</title>
+
+  <!-- Fonts: DM Serif Display for display text, DM Mono for data/labels -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- p5.js v1.9 via CDN — no build step needed -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0e0e0f;
+      color: #e8e6df;
+      font-family: 'DM Mono', monospace;
+      overflow-x: hidden;
+    }
+
+    /* ── Header ── */
+    #header {
+      padding: 28px 40px 16px;
+    }
+    #eyebrow {
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    #title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: #e8e6df;
+      margin-bottom: 6px;
+    }
+    #subtitle {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    /* ── Canvas wrapper ──
+       position: relative so that the GIF overlay and info card
+       can be absolutely positioned relative to the canvas area */
+    #canvas-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    canvas { display: block; }
+
+    /* ── GIF overlay ──
+       A circular <div> that sits directly on top of a hovered bubble.
+       Rendered above the canvas using z-index, clipped to a circle
+       via border-radius. pointer-events: none so mouse events still
+       reach the canvas beneath. */
+    #gif-overlay {
+      position: absolute;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: none;
+      display: none;
+      z-index: 10;
+    }
+    #gif-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fill the circle, crop edges uniformly */
+    }
+
+    /* ── Info card ──
+       Appears in the top-right corner of the canvas on hover.
+       Shows keyword name, GIF count, and cluster tag. */
+    #info-card {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      text-align: right;
+      display: none;
+      pointer-events: none;
+      z-index: 10;
+    }
+    #info-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: #e8e6df;
+      margin-bottom: 4px;
+    }
+    #info-count {
+      font-size: 12px;
+      color: #c8b07a;
+      margin-bottom: 4px;
+    }
+    #info-cluster {
+      font-size: 9px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* ── Footer ── */
+    #footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 40px;
+      font-size: 9px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header: eyebrow + title + subtitle outside the canvas -->
+  <div id="header">
+    <div id="eyebrow">GIPHY · VISUAL CODIFICATION INDEX</div>
+    <div id="title">What the Internet Can Say in Images</div>
+    <div id="subtitle">
+      Circle size = number of GIFs indexed for each keyword.
+      Hover to see how the internet visualises a word.
+    </div>
+  </div>
+
+  <!-- Canvas area: p5 canvas + GIF overlay + info card all share this container -->
+  <div id="canvas-wrap">
+    <div id="gif-overlay">
+      <img id="gif-img" src="" alt="" />
+    </div>
+    <div id="info-card">
+      <div id="info-name"></div>
+      <div id="info-count"></div>
+      <div id="info-cluster"></div>
+    </div>
+  </div>
+
+  <!-- Footer: source attribution + keyword/cluster count -->
+  <div id="footer">
+    <span id="footer-left">Source: GIPHY Search API · March 2026</span>
+    <span id="footer-right" id="footer-right">— keywords · — clusters</span>
+  </div>
+
+  <script>
+  // ═══════════════════════════════════════════════════════════════════════════
+  // CONFIG
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Cluster → hex color mapping
+  const CLUSTER_COLORS = {
+    conflict:    '#b85c5c',
+    platform:    '#7eb8d4',
+    information: '#c8b07a',
+    technology:  '#7dc49a',
+    politics:    '#c47eb8',
+    culture:     '#d4845a',
+    climate:     '#5a8fa8',
+  };
+
+  // Diameter bounds in pixels for sqrt-scaled bubble sizes
+  const MIN_DIAM = 60;
+  const MAX_DIAM = 220;
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // STATE
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  let bubbles      = [];  // array of bubble objects, populated after CSV loads
+  let hoveredIndex = -1;  // index of the currently hovered bubble, -1 = none
+
+  // DOM references used for the GIF overlay and info card
+  const gifOverlay  = document.getElementById('gif-overlay');
+  const gifImg      = document.getElementById('gif-img');
+  const infoCard    = document.getElementById('info-card');
+  const infoName    = document.getElementById('info-name');
+  const infoCount   = document.getElementById('info-count');
+  const infoCluster = document.getElementById('info-cluster');
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // CSV PARSER
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Parses a raw CSV string (including quoted fields) into an array of objects.
+  // We use fetch() + manual parsing rather than p5's loadTable() so that
+  // everything lives in a single file without any build step.
+  function parseCSV(text) {
+    const lines   = text.trim().split('\n');
+    const headers = lines[0].split(',').map(h => h.trim());
+
+    return lines.slice(1).map(line => {
+      const row = {};
+      let i = 0, col = 0;
+
+      // Walk through each character to handle quoted fields correctly
+      while (i < line.length && col < headers.length) {
+        if (line[i] === '"') {
+          // Quoted field: scan forward until the closing double-quote
+          const end = line.indexOf('"', i + 1);
+          row[headers[col]] = line.slice(i + 1, end);
+          i = end + 2; // skip past closing quote and the following comma
+        } else {
+          // Unquoted field: scan forward to the next comma
+          const end = line.indexOf(',', i);
+          if (end === -1) {
+            // Last field on the line — take the rest of the string
+            row[headers[col]] = line.slice(i).trim();
+            i = line.length;
+          } else {
+            row[headers[col]] = line.slice(i, end).trim();
+            i = end + 1; // move past the comma
+          }
+        }
+        col++;
+      }
+
+      return row;
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SCALING
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Map total_count → diameter using sqrt scaling.
+  // Sqrt prevents the largest values from producing circles that visually
+  // dominate the layout — it compresses the size range without hiding variance.
+  function scaleDiameter(count, minCount, maxCount) {
+    const sqrtVal = Math.sqrt(count);
+    const sqrtMin = Math.sqrt(minCount);
+    const sqrtMax = Math.sqrt(maxCount);
+    // Normalise to [0, 1] in sqrt-space, then map to [MIN_DIAM, MAX_DIAM]
+    const norm = (sqrtVal - sqrtMin) / (sqrtMax - sqrtMin || 1);
+    return MIN_DIAM + norm * (MAX_DIAM - MIN_DIAM);
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // BUBBLE PACKING
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Assigns non-overlapping (x, y) positions to each bubble.
+  //
+  // Strategy:
+  //   1. Sort bubbles by radius (largest first) so big circles claim space
+  //      before small ones try to fill gaps.
+  //   2. Place each bubble at the next available position on an outward spiral
+  //      from the canvas centre — the first valid position with no collision.
+  //   3. Run a second pass of iterative collision resolution to tighten any
+  //      remaining overlaps that slipped through at coarser spiral steps.
+  function packBubbles(bubs, canvasW, canvasH) {
+    const PADDING = 10; // minimum gap (px) between any two circle edges
+
+    // Work on a copy sorted by descending radius
+    const sorted = [...bubs].sort((a, b) => b.r - a.r);
+    const placed = []; // tracks already-positioned bubbles
+
+    sorted.forEach((b, i) => {
+      if (i === 0) {
+        // First (largest) bubble goes at the canvas centre
+        b.x = canvasW / 2;
+        b.y = canvasH / 2;
+        placed.push(b);
+        return;
+      }
+
+      // Spiral outward from centre until a collision-free spot is found
+      let foundSpot = false;
+      const maxRadius = Math.max(canvasW, canvasH);
+
+      for (let dist = 0; dist <= maxRadius && !foundSpot; dist += 4) {
+        // Sample positions around the ring at this distance
+        const steps = Math.max(12, Math.floor(2 * Math.PI * dist / 8));
+        for (let s = 0; s < steps && !foundSpot; s++) {
+          const angle = (s / steps) * Math.PI * 2;
+          const cx    = canvasW / 2 + Math.cos(angle) * dist;
+          const cy    = canvasH / 2 + Math.sin(angle) * dist;
+
+          // Reject positions that would push the circle outside the canvas
+          if (cx - b.r < 6 || cx + b.r > canvasW - 6) continue;
+          if (cy - b.r < 6 || cy + b.r > canvasH - 6) continue;
+
+          // Check against every already-placed bubble for overlap
+          let clear = true;
+          for (const p of placed) {
+            const dx = cx - p.x;
+            const dy = cy - p.y;
+            if (Math.sqrt(dx * dx + dy * dy) < b.r + p.r + PADDING) {
+              clear = false;
+              break;
+            }
+          }
+
+          if (clear) {
+            b.x = cx;
+            b.y = cy;
+            foundSpot = true;
+          }
+        }
+      }
+
+      // Fallback: if the canvas is very crowded, just place randomly within bounds
+      if (!foundSpot) {
+        b.x = b.r + 10 + Math.random() * (canvasW - 2 * b.r - 20);
+        b.y = b.r + 10 + Math.random() * (canvasH - 2 * b.r - 20);
+      }
+
+      placed.push(b);
+    });
+
+    // ── Collision resolution pass ──────────────────────────────────────────
+    // After spiral placement, run 80 iterations of pairwise push-apart to
+    // resolve any remaining overlaps and produce a tighter, cleaner layout.
+    const ITERS = 80;
+    for (let iter = 0; iter < ITERS; iter++) {
+      for (let i = 0; i < sorted.length; i++) {
+        for (let j = i + 1; j < sorted.length; j++) {
+          const a = sorted[i];
+          const b = sorted[j];
+          const dx      = b.x - a.x;
+          const dy      = b.y - a.y;
+          const dist    = Math.sqrt(dx * dx + dy * dy) || 0.001;
+          const minDist = a.r + b.r + PADDING;
+
+          if (dist < minDist) {
+            // Overlap: push both circles apart by half the overlap distance
+            const overlap = (minDist - dist) / 2;
+            const nx = dx / dist; // unit normal pointing from a → b
+            const ny = dy / dist;
+            a.x -= nx * overlap;
+            a.y -= ny * overlap;
+            b.x += nx * overlap;
+            b.y += ny * overlap;
+          }
+        }
+
+        // Clamp to canvas after each bubble is processed
+        const b = sorted[i];
+        b.x = Math.max(b.r + 6, Math.min(canvasW - b.r - 6, b.x));
+        b.y = Math.max(b.r + 6, Math.min(canvasH - b.r - 6, b.y));
+      }
+    }
+
+    // Write the computed positions back to the original bubble objects
+    // (sorted is a shallow copy so we match by label)
+    sorted.forEach(s => {
+      const orig = bubs.find(o => o.label === s.label);
+      if (orig) { orig.x = s.x; orig.y = s.y; }
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // HELPERS
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Format a raw count as a human-readable string with unit, e.g. "1.2M GIFs"
+  function formatCount(n) {
+    if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M GIFs';
+    if (n >= 1_000)     return Math.round(n / 1_000) + 'K GIFs';
+    return n + ' GIFs';
+  }
+
+  // Return the pixel height available for the canvas
+  // (viewport minus the fixed header and footer heights)
+  function canvasHeight() {
+    const hH = document.getElementById('header').offsetHeight;
+    const fH = document.getElementById('footer').offsetHeight;
+    return window.innerHeight - hH - fH;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // GIF OVERLAY & INFO CARD
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // Position the circular GIF div exactly over a bubble and reveal it.
+  // The canvas sits at the top of #canvas-wrap, so bubble canvas-coords
+  // map directly to CSS left/top offsets within that container.
+  function showOverlay(b) {
+    const diam = b.r * 2;
+
+    // Position the overlay circle to match the bubble exactly
+    gifOverlay.style.left   = (b.x - b.r) + 'px';
+    gifOverlay.style.top    = (b.y - b.r) + 'px';
+    gifOverlay.style.width  = diam + 'px';
+    gifOverlay.style.height = diam + 'px';
+
+    // Set the GIF source — loads directly from GIPHY CDN, no API call
+    gifImg.src = b.gifUrl;
+    gifOverlay.style.display = 'block';
+
+    // Populate the info card fields
+    infoName.textContent    = b.label;
+    infoCount.textContent   = formatCount(b.count);
+    infoCluster.textContent = b.cluster;
+    infoCard.style.display  = 'block';
+  }
+
+  function hideOverlay() {
+    gifOverlay.style.display = 'none';
+    gifImg.src               = ''; // clear src to stop any in-flight load
+    infoCard.style.display   = 'none';
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // p5 SKETCH (instance mode keeps everything in a clean local scope)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  new p5(function(p) {
+
+    // ── setup: runs once on page load ──────────────────────────────────────
+    p.setup = function() {
+      const cnv = p.createCanvas(window.innerWidth, canvasHeight());
+      cnv.parent('canvas-wrap'); // mount canvas inside the container div
+
+      // Static viz — only redraw when data changes or hover changes
+      p.noLoop();
+
+      // Load the CSV asynchronously via fetch()
+      fetch('../data/giphy_counts.csv')
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.text();
+        })
+        .then(text => {
+          const rows = parseCSV(text);
+
+          // Extract all count values to establish the scaling range
+          const counts  = rows.map(r => parseInt(r.total_count, 10) || 0);
+          const minCount = Math.min(...counts);
+          const maxCount = Math.max(...counts);
+
+          // Build a bubble object for each CSV row
+          bubbles = rows.map(row => ({
+            label:   row.label,
+            cluster: row.cluster,
+            count:   parseInt(row.total_count, 10) || 0,
+            gifUrl:  row.top_gif_url,
+            // Radius is half the sqrt-scaled diameter
+            r:       scaleDiameter(parseInt(row.total_count, 10) || 0, minCount, maxCount) / 2,
+            x:       0, // set by packBubbles
+            y:       0,
+            color:   CLUSTER_COLORS[row.cluster] || '#888888',
+          }));
+
+          // Compute non-overlapping positions before first draw
+          packBubbles(bubbles, p.width, p.height);
+
+          // Update footer with actual keyword and cluster counts
+          const clusterCount = new Set(bubbles.map(b => b.cluster)).size;
+          document.getElementById('footer-right').textContent =
+            `${bubbles.length} keywords · ${clusterCount} clusters`;
+
+          p.redraw(); // trigger the first draw pass now that data is ready
+        })
+        .catch(err => {
+          // Show a friendly error directly on the canvas
+          p.background('#0e0e0f');
+          p.fill('#888');
+          p.noStroke();
+          p.textFont('DM Mono');
+          p.textSize(12);
+          p.textAlign(p.CENTER, p.CENTER);
+          p.text(
+            '⚠ Could not load giphy_counts.csv\nRun fetch_giphy_data.py first.',
+            p.width / 2, p.height / 2
+          );
+          console.error('CSV load failed:', err);
+        });
+    };
+
+    // ── windowResized: repack bubbles to fit the new canvas size ───────────
+    p.windowResized = function() {
+      p.resizeCanvas(window.innerWidth, canvasHeight());
+      if (bubbles.length) {
+        packBubbles(bubbles, p.width, p.height);
+        p.redraw();
+      }
+    };
+
+    // ── draw: called once after data loads, and again on hover changes ─────
+    p.draw = function() {
+      p.background('#0e0e0f');
+
+      bubbles.forEach((b, i) => {
+        const isHovered = (i === hoveredIndex);
+
+        // Parse the hex cluster color into r, g, b components so we can
+        // apply per-channel opacity without touching the original color string
+        const c  = p.color(b.color);
+        const r  = p.red(c);
+        const g  = p.green(c);
+        const bl = p.blue(c);
+
+        // Fill: cluster color at ~30% opacity (76/255 ≈ 30%)
+        p.fill(r, g, bl, 76);
+
+        // Stroke: cluster color at 80% opacity normally, 100% when hovered
+        p.stroke(r, g, bl, isHovered ? 255 : 204);
+        p.strokeWeight(isHovered ? 2.5 : 1.5);
+
+        // Draw the bubble circle
+        p.circle(b.x, b.y, b.r * 2);
+
+        // Label: keyword name centred just below the circle edge
+        p.noStroke();
+        p.fill(136, 136, 136); // #888
+        p.textFont('DM Mono');
+        p.textSize(10);
+        p.textAlign(p.CENTER, p.TOP);
+        p.text(b.label, b.x, b.y + b.r + 5);
+      });
+    };
+
+    // ── mouseMoved: detect which bubble (if any) the cursor is over ────────
+    p.mouseMoved = function() {
+      let found = -1;
+
+      // Simple distance check — mouse is inside the circle if dist ≤ radius
+      for (let i = 0; i < bubbles.length; i++) {
+        const b  = bubbles[i];
+        const dx = p.mouseX - b.x;
+        const dy = p.mouseY - b.y;
+        if (Math.sqrt(dx * dx + dy * dy) <= b.r) {
+          found = i;
+          break;
+        }
+      }
+
+      if (found !== hoveredIndex) {
+        // Hover state changed — update overlay and trigger a redraw
+        hoveredIndex = found;
+        found >= 0 ? showOverlay(bubbles[found]) : hideOverlay();
+        p.redraw();
+      }
+    };
+
+    // ── mouseExited: clean up hover state when cursor leaves the canvas ────
+    p.mouseExited = function() {
+      if (hoveredIndex !== -1) {
+        hoveredIndex = -1;
+        hideOverlay();
+        p.redraw();
+      }
+    };
+
+  }); // end p5 instance
+  </script>
+</body>
+</html>

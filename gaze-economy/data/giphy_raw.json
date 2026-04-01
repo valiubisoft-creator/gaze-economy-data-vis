@@ -1,0 +1,530 @@
+{
+  "Gaza": {
+    "term": "gaza",
+    "label": "Gaza",
+    "cluster": "conflict",
+    "total_count": 500,
+    "top_gif_url": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3Yxa296eXF3cHoyYmU0N3R5b3Q5em4zMXg4cWppdTAzZjN4MDZmaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lzlaLAhc4KhsuCt6fy/200w.gif",
+    "top_gif_preview": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3Yxa296eXF3cHoyYmU0N3R5b3Q5em4zMXg4cWppdTAzZjN4MDZmaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lzlaLAhc4KhsuCt6fy/200w_s.gif",
+    "top_gif_title": "War Israel GIF by The Guardian",
+    "gif_urls": [
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3Yxa296eXF3cHoyYmU0N3R5b3Q5em4zMXg4cWppdTAzZjN4MDZmaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lzlaLAhc4KhsuCt6fy/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3Yxa296eXF3cHoyYmU0N3R5b3Q5em4zMXg4cWppdTAzZjN4MDZmaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/6c13IQhiylwt5dT3yj/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3Yxa296eXF3cHoyYmU0N3R5b3Q5em4zMXg4cWppdTAzZjN4MDZmaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zHAWWmvCDpa5AgpCOG/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3Yxa296eXF3cHoyYmU0N3R5b3Q5em4zMXg4cWppdTAzZjN4MDZmaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JayzHUJ7Cw2jiVajoz/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3Yxa296eXF3cHoyYmU0N3R5b3Q5em4zMXg4cWppdTAzZjN4MDZmaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/IffynfmUGfqx65LH5A/200w.gif"
+    ]
+  },
+  "War": {
+    "term": "war",
+    "label": "War",
+    "cluster": "conflict",
+    "total_count": 500,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZGw3ejR4cmRxdWkzNTd3bHpvMmUzdDM2NG8zZW85Y3pvNmhoNXRpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2z6x8UzzCdBBu/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZGw3ejR4cmRxdWkzNTd3bHpvMmUzdDM2NG8zZW85Y3pvNmhoNXRpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2z6x8UzzCdBBu/200w_s.gif",
+    "top_gif_title": "war GIF",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZGw3ejR4cmRxdWkzNTd3bHpvMmUzdDM2NG8zZW85Y3pvNmhoNXRpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2z6x8UzzCdBBu/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZGw3ejR4cmRxdWkzNTd3bHpvMmUzdDM2NG8zZW85Y3pvNmhoNXRpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zK5EHMbtwfW1O/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZGw3ejR4cmRxdWkzNTd3bHpvMmUzdDM2NG8zZW85Y3pvNmhoNXRpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lDifyB9R0iqWoDZoIT/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZGw3ejR4cmRxdWkzNTd3bHpvMmUzdDM2NG8zZW85Y3pvNmhoNXRpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZY2wL5cb9JW3PooPH2/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZGw3ejR4cmRxdWkzNTd3bHpvMmUzdDM2NG8zZW85Y3pvNmhoNXRpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PtFk5J9VbRJeijlbQn/200w.gif"
+    ]
+  },
+  "Protest": {
+    "term": "protest",
+    "label": "Protest",
+    "cluster": "conflict",
+    "total_count": 500,
+    "top_gif_url": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dDF5ZWg4eW5qZWo0Z205ZXN5cDNqbGRwc2Y1bDVxbzdqbzNhczlvcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZMf8ngW0f8xaij3eai/200w.gif",
+    "top_gif_preview": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dDF5ZWg4eW5qZWo0Z205ZXN5cDNqbGRwc2Y1bDVxbzdqbzNhczlvcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZMf8ngW0f8xaij3eai/200w_s.gif",
+    "top_gif_title": "Organize Human Rights GIF by Creative Courage",
+    "gif_urls": [
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dDF5ZWg4eW5qZWo0Z205ZXN5cDNqbGRwc2Y1bDVxbzdqbzNhczlvcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZMf8ngW0f8xaij3eai/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dDF5ZWg4eW5qZWo0Z205ZXN5cDNqbGRwc2Y1bDVxbzdqbzNhczlvcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3orif3hq0ByMqqVRiU/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dDF5ZWg4eW5qZWo0Z205ZXN5cDNqbGRwc2Y1bDVxbzdqbzNhczlvcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HjlLSXBVVMRRJemaOH/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dDF5ZWg4eW5qZWo0Z205ZXN5cDNqbGRwc2Y1bDVxbzdqbzNhczlvcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/dyMXivW0CCuiBLNeVk/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dDF5ZWg4eW5qZWo0Z205ZXN5cDNqbGRwc2Y1bDVxbzdqbzNhczlvcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ymwKHQ44WnAoU/200w.gif"
+    ]
+  },
+  "Ceasefire": {
+    "term": "ceasefire",
+    "label": "Ceasefire",
+    "cluster": "conflict",
+    "total_count": 180,
+    "top_gif_url": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3B1ZTl3amltejg2aWdkNHd0bnlmNDRrZWhhMnJ2aHk2ZTV2ZDNzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JayzHUJ7Cw2jiVajoz/200w.gif",
+    "top_gif_preview": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3B1ZTl3amltejg2aWdkNHd0bnlmNDRrZWhhMnJ2aHk2ZTV2ZDNzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JayzHUJ7Cw2jiVajoz/200w_s.gif",
+    "top_gif_title": "Freedom Palestine GIF",
+    "gif_urls": [
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3B1ZTl3amltejg2aWdkNHd0bnlmNDRrZWhhMnJ2aHk2ZTV2ZDNzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JayzHUJ7Cw2jiVajoz/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3B1ZTl3amltejg2aWdkNHd0bnlmNDRrZWhhMnJ2aHk2ZTV2ZDNzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/djKSFe1LuSXAoTbZYX/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3B1ZTl3amltejg2aWdkNHd0bnlmNDRrZWhhMnJ2aHk2ZTV2ZDNzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/V0WdXbPczJL37DX30D/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3B1ZTl3amltejg2aWdkNHd0bnlmNDRrZWhhMnJ2aHk2ZTV2ZDNzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/yYffA9Vx4SprSTQzNk/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5M3B1ZTl3amltejg2aWdkNHd0bnlmNDRrZWhhMnJ2aHk2ZTV2ZDNzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ST2RZgARByGUUVSN3b/200w.gif"
+    ]
+  },
+  "Refugee": {
+    "term": "refugee",
+    "label": "Refugee",
+    "cluster": "conflict",
+    "total_count": 500,
+    "top_gif_url": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ODcycDdiMjBncXg1NW94MW5raHJzMDN3dTJlZHJsYTF1aXR4dnl6bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/N6mg8LlMXDx5e/200w.gif",
+    "top_gif_preview": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ODcycDdiMjBncXg1NW94MW5raHJzMDN3dTJlZHJsYTF1aXR4dnl6bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/N6mg8LlMXDx5e/200w_s.gif",
+    "top_gif_title": "syrian refugees news GIF",
+    "gif_urls": [
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ODcycDdiMjBncXg1NW94MW5raHJzMDN3dTJlZHJsYTF1aXR4dnl6bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/N6mg8LlMXDx5e/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ODcycDdiMjBncXg1NW94MW5raHJzMDN3dTJlZHJsYTF1aXR4dnl6bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/rxFqyiyYbIZIk/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ODcycDdiMjBncXg1NW94MW5raHJzMDN3dTJlZHJsYTF1aXR4dnl6bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o6Ztm4lQIeWvRGaWI/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ODcycDdiMjBncXg1NW94MW5raHJzMDN3dTJlZHJsYTF1aXR4dnl6bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zSDLXVfxwsQvKS2vp7/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ODcycDdiMjBncXg1NW94MW5raHJzMDN3dTJlZHJsYTF1aXR4dnl6bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NWssVZxB49c757xOrc/200w.gif"
+    ]
+  },
+  "TikTok": {
+    "term": "tiktok",
+    "label": "TikTok",
+    "cluster": "platform",
+    "total_count": 500,
+    "top_gif_url": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eDJkc3psZzFncXBrYnowaTlhaXI5bDI5cXk2bXo0MW90Y2I3MDk2bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/43wR1f8QU9KApWKjYt/200w.gif",
+    "top_gif_preview": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eDJkc3psZzFncXBrYnowaTlhaXI5bDI5cXk2bXo0MW90Y2I3MDk2bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/43wR1f8QU9KApWKjYt/200w_s.gif",
+    "top_gif_title": "Stantwitter Please GIF",
+    "gif_urls": [
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eDJkc3psZzFncXBrYnowaTlhaXI5bDI5cXk2bXo0MW90Y2I3MDk2bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/43wR1f8QU9KApWKjYt/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eDJkc3psZzFncXBrYnowaTlhaXI5bDI5cXk2bXo0MW90Y2I3MDk2bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pj6kX3c8bRijBrl6yR/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eDJkc3psZzFncXBrYnowaTlhaXI5bDI5cXk2bXo0MW90Y2I3MDk2bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/a2zREoGQMXR1q9nsnK/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eDJkc3psZzFncXBrYnowaTlhaXI5bDI5cXk2bXo0MW90Y2I3MDk2bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ujwiCsJtRmXdBzJvmm/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eDJkc3psZzFncXBrYnowaTlhaXI5bDI5cXk2bXo0MW90Y2I3MDk2bSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PG0BhdqjSUOAjGwyJj/200w.gif"
+    ]
+  },
+  "Instagram": {
+    "term": "instagram",
+    "label": "Instagram",
+    "cluster": "platform",
+    "total_count": 500,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bzNnaWIydXNhcHg1cG0yYnhyZnhkZTFjNzV5MWdqdG8xaDk3dTVtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/siDt3kPh2btNhpWAq1/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bzNnaWIydXNhcHg1cG0yYnhyZnhkZTFjNzV5MWdqdG8xaDk3dTVtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/siDt3kPh2btNhpWAq1/200w_s.gif",
+    "top_gif_title": "Charlie Kirk Instagram GIF",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bzNnaWIydXNhcHg1cG0yYnhyZnhkZTFjNzV5MWdqdG8xaDk3dTVtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/siDt3kPh2btNhpWAq1/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bzNnaWIydXNhcHg1cG0yYnhyZnhkZTFjNzV5MWdqdG8xaDk3dTVtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CdBD6dihKnnjUzXTFc/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bzNnaWIydXNhcHg1cG0yYnhyZnhkZTFjNzV5MWdqdG8xaDk3dTVtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/q6VGyFY5JehAdkaa7J/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bzNnaWIydXNhcHg1cG0yYnhyZnhkZTFjNzV5MWdqdG8xaDk3dTVtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/yxy69FCE06Ql0Fjk4Z/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bzNnaWIydXNhcHg1cG0yYnhyZnhkZTFjNzV5MWdqdG8xaDk3dTVtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/18gEqArCQNlo5zowZn/200w.gif"
+    ]
+  },
+  "YouTube": {
+    "term": "youtube",
+    "label": "YouTube",
+    "cluster": "platform",
+    "total_count": 500,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YXM2MXo5Y3AxdDQ4NWp6cGg3cTdsd2Zwd2wzZzVyN3ZnMDhsOTF3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TytHun5lKuMdzUYVxl/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YXM2MXo5Y3AxdDQ4NWp6cGg3cTdsd2Zwd2wzZzVyN3ZnMDhsOTF3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TytHun5lKuMdzUYVxl/200w_s.gif",
+    "top_gif_title": "Youtube Subscribe GIF by Alexander White",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YXM2MXo5Y3AxdDQ4NWp6cGg3cTdsd2Zwd2wzZzVyN3ZnMDhsOTF3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TytHun5lKuMdzUYVxl/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YXM2MXo5Y3AxdDQ4NWp6cGg3cTdsd2Zwd2wzZzVyN3ZnMDhsOTF3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/13Nc3xlO1kGg3S/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YXM2MXo5Y3AxdDQ4NWp6cGg3cTdsd2Zwd2wzZzVyN3ZnMDhsOTF3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TgMAmoaliiMthuz4zM/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YXM2MXo5Y3AxdDQ4NWp6cGg3cTdsd2Zwd2wzZzVyN3ZnMDhsOTF3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HDrGWxOU60erL9uHM2/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YXM2MXo5Y3AxdDQ4NWp6cGg3cTdsd2Zwd2wzZzVyN3ZnMDhsOTF3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bTF4iiCmxK5qkH6rKF/200w.gif"
+    ]
+  },
+  "Twitter": {
+    "term": "twitter",
+    "label": "Twitter",
+    "cluster": "platform",
+    "total_count": 500,
+    "top_gif_url": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZXFvMmkybmowdWxjaWV4cmdjcGxmbzcwcnVzcWgyYzZ3YXFqcGU4ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/epg6OTkQ8Gn1S/200w.gif",
+    "top_gif_preview": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZXFvMmkybmowdWxjaWV4cmdjcGxmbzcwcnVzcWgyYzZ3YXFqcGU4ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/epg6OTkQ8Gn1S/200w_s.gif",
+    "top_gif_title": "twitter relax GIF",
+    "gif_urls": [
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZXFvMmkybmowdWxjaWV4cmdjcGxmbzcwcnVzcWgyYzZ3YXFqcGU4ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/epg6OTkQ8Gn1S/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZXFvMmkybmowdWxjaWV4cmdjcGxmbzcwcnVzcWgyYzZ3YXFqcGU4ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/SMKiEh9WDO6ze/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZXFvMmkybmowdWxjaWV4cmdjcGxmbzcwcnVzcWgyYzZ3YXFqcGU4ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iJP0ycADVGg6eKHhiK/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZXFvMmkybmowdWxjaWV4cmdjcGxmbzcwcnVzcWgyYzZ3YXFqcGU4ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/yHQaduzUH8rPa/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZXFvMmkybmowdWxjaWV4cmdjcGxmbzcwcnVzcWgyYzZ3YXFqcGU4ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/EwU72Zrr7PyQE/200w.gif"
+    ]
+  },
+  "Social Media": {
+    "term": "social media",
+    "label": "Social Media",
+    "cluster": "platform",
+    "total_count": 500,
+    "top_gif_url": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dnhtazYxcWFld2lia2dpZmdraHI3NnJoOGZmM3FtNDllcHc1cngxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MZPAI5zR9B1YJoz9Jw/200w.gif",
+    "top_gif_preview": "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dnhtazYxcWFld2lia2dpZmdraHI3NnJoOGZmM3FtNDllcHc1cngxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MZPAI5zR9B1YJoz9Jw/200w_s.gif",
+    "top_gif_title": "",
+    "gif_urls": [
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dnhtazYxcWFld2lia2dpZmdraHI3NnJoOGZmM3FtNDllcHc1cngxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MZPAI5zR9B1YJoz9Jw/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dnhtazYxcWFld2lia2dpZmdraHI3NnJoOGZmM3FtNDllcHc1cngxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bkVpR5zAcF0P4sTUzu/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dnhtazYxcWFld2lia2dpZmdraHI3NnJoOGZmM3FtNDllcHc1cngxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ujwiCsJtRmXdBzJvmm/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dnhtazYxcWFld2lia2dpZmdraHI3NnJoOGZmM3FtNDllcHc1cngxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Z2S9zF7Y7e6Sk/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dnhtazYxcWFld2lia2dpZmdraHI3NnJoOGZmM3FtNDllcHc1cngxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ijEiXYEo9DBxm/200w.gif"
+    ]
+  },
+  "Going Viral": {
+    "term": "going viral",
+    "label": "Going Viral",
+    "cluster": "platform",
+    "total_count": 184,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dXh5endhMmlkYTVhdDk0ZzJic2UyeHR6cXZvc2E1b2dnNzZ5MGIyMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/t9S2GSxl81xZDMsGEv/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dXh5endhMmlkYTVhdDk0ZzJic2UyeHR6cXZvc2E1b2dnNzZ5MGIyMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/t9S2GSxl81xZDMsGEv/200w_s.gif",
+    "top_gif_title": "In A Corner Go Sit Down GIF",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dXh5endhMmlkYTVhdDk0ZzJic2UyeHR6cXZvc2E1b2dnNzZ5MGIyMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/t9S2GSxl81xZDMsGEv/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dXh5endhMmlkYTVhdDk0ZzJic2UyeHR6cXZvc2E1b2dnNzZ5MGIyMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cdNSp4L5vCU7aQrYnV/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dXh5endhMmlkYTVhdDk0ZzJic2UyeHR6cXZvc2E1b2dnNzZ5MGIyMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ifnd1RObqkq2AHhe77/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dXh5endhMmlkYTVhdDk0ZzJic2UyeHR6cXZvc2E1b2dnNzZ5MGIyMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7eoBm1hpNvhe1sOIQs/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dXh5endhMmlkYTVhdDk0ZzJic2UyeHR6cXZvc2E1b2dnNzZ5MGIyMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YPjVjujx9YApITud9F/200w.gif"
+    ]
+  },
+  "Scrolling": {
+    "term": "scroll",
+    "label": "Scrolling",
+    "cluster": "platform",
+    "total_count": 500,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5c3pvNnh4bno4NHkxMmRtM2RiNGZsb3l3bjZ2bDN2N2UzcjJueWNodSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4xWGyVKoXqg2eVCiq9/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5c3pvNnh4bno4NHkxMmRtM2RiNGZsb3l3bjZ2bDN2N2UzcjJueWNodSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4xWGyVKoXqg2eVCiq9/200w_s.gif",
+    "top_gif_title": "Tell Me More To Do List GIF by Disney Channel",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5c3pvNnh4bno4NHkxMmRtM2RiNGZsb3l3bjZ2bDN2N2UzcjJueWNodSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4xWGyVKoXqg2eVCiq9/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5c3pvNnh4bno4NHkxMmRtM2RiNGZsb3l3bjZ2bDN2N2UzcjJueWNodSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jzHFPlw89eTqU/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5c3pvNnh4bno4NHkxMmRtM2RiNGZsb3l3bjZ2bDN2N2UzcjJueWNodSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/M64ISagTrUBk5Q33QZ/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5c3pvNnh4bno4NHkxMmRtM2RiNGZsb3l3bjZ2bDN2N2UzcjJueWNodSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kb05kuOVqNb4xq6VIy/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5c3pvNnh4bno4NHkxMmRtM2RiNGZsb3l3bjZ2bDN2N2UzcjJueWNodSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4LG8mYIacy4Pn610rM/200w.gif"
+    ]
+  },
+  "Fake News": {
+    "term": "fake news",
+    "label": "Fake News",
+    "cluster": "information",
+    "total_count": 500,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aTY4NmIxZ2lqN2loY2Y3aGN6bnRheHR0bWRuZGw3amVzcWFlZDBrdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/O2j3S8bUUWNVDahHz7/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aTY4NmIxZ2lqN2loY2Y3aGN6bnRheHR0bWRuZGw3amVzcWFlZDBrdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/O2j3S8bUUWNVDahHz7/200w_s.gif",
+    "top_gif_title": "News Trump GIF",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aTY4NmIxZ2lqN2loY2Y3aGN6bnRheHR0bWRuZGw3amVzcWFlZDBrdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/O2j3S8bUUWNVDahHz7/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aTY4NmIxZ2lqN2loY2Y3aGN6bnRheHR0bWRuZGw3amVzcWFlZDBrdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iBLzl03SGhKqcucG0o/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aTY4NmIxZ2lqN2loY2Y3aGN6bnRheHR0bWRuZGw3amVzcWFlZDBrdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26n6ziTEeDDbowBkQ/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aTY4NmIxZ2lqN2loY2Y3aGN6bnRheHR0bWRuZGw3amVzcWFlZDBrdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/R8n7YlPHe34dy/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aTY4NmIxZ2lqN2loY2Y3aGN6bnRheHR0bWRuZGw3amVzcWFlZDBrdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hEE1z7590hMx3CwMeU/200w.gif"
+    ]
+  },
+  "Misinformation": {
+    "term": "misinformation",
+    "label": "Misinformation",
+    "cluster": "information",
+    "total_count": 452,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5OWszc25pYmxscjM2N2l5YXBsZXNzMWptcmlwejF6NmVzZzViY3Q0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7PxuiRgTZG9H1B1vW7/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5OWszc25pYmxscjM2N2l5YXBsZXNzMWptcmlwejF6NmVzZzViY3Q0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7PxuiRgTZG9H1B1vW7/200w_s.gif",
+    "top_gif_title": "Liar Lying GIF",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5OWszc25pYmxscjM2N2l5YXBsZXNzMWptcmlwejF6NmVzZzViY3Q0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7PxuiRgTZG9H1B1vW7/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5OWszc25pYmxscjM2N2l5YXBsZXNzMWptcmlwejF6NmVzZzViY3Q0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/uYjh1ztbwQO0zDazAc/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5OWszc25pYmxscjM2N2l5YXBsZXNzMWptcmlwejF6NmVzZzViY3Q0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/22DwtuhrnGoGAa3yJl/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5OWszc25pYmxscjM2N2l5YXBsZXNzMWptcmlwejF6NmVzZzViY3Q0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gYyAnYhxT1xqRxFD7W/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5OWszc25pYmxscjM2N2l5YXBsZXNzMWptcmlwejF6NmVzZzViY3Q0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/op2YPIEIaQ79xexEcT/200w.gif"
+    ]
+  },
+  "Deepfake": {
+    "term": "deepfake",
+    "label": "Deepfake",
+    "cluster": "information",
+    "total_count": 145,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aXNrZ2MwNjdmeG9nanZ0ZHc3ZW03M3E0b3R1N3E5Y2NucGRkamVhNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/31UJn87m2S7r6Nnec8/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aXNrZ2MwNjdmeG9nanZ0ZHc3ZW03M3E0b3R1N3E5Y2NucGRkamVhNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/31UJn87m2S7r6Nnec8/200w_s.gif",
+    "top_gif_title": "girlfriend you love it GIF",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aXNrZ2MwNjdmeG9nanZ0ZHc3ZW03M3E0b3R1N3E5Y2NucGRkamVhNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/31UJn87m2S7r6Nnec8/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aXNrZ2MwNjdmeG9nanZ0ZHc3ZW03M3E0b3R1N3E5Y2NucGRkamVhNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ta1b7Yu9yeRIIoC5Yi/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aXNrZ2MwNjdmeG9nanZ0ZHc3ZW03M3E0b3R1N3E5Y2NucGRkamVhNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KV3mdFLXdRH1l6BY6s/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aXNrZ2MwNjdmeG9nanZ0ZHc3ZW03M3E0b3R1N3E5Y2NucGRkamVhNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l4pTr6WfDcDfeGwJG/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aXNrZ2MwNjdmeG9nanZ0ZHc3ZW03M3E0b3R1N3E5Y2NucGRkamVhNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YN1eB6slBDeNHr1gjs/200w.gif"
+    ]
+  },
+  "Propaganda": {
+    "term": "propaganda",
+    "label": "Propaganda",
+    "cluster": "information",
+    "total_count": 471,
+    "top_gif_url": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5N29mOHp3NGN0eTY1Mms3cDJpbmE0ZnN6NHZpOGMzNXllem8yNWUxNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VeT8YIhHBSCKovzmES/200w.gif",
+    "top_gif_preview": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5N29mOHp3NGN0eTY1Mms3cDJpbmE0ZnN6NHZpOGMzNXllem8yNWUxNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VeT8YIhHBSCKovzmES/200w_s.gif",
+    "top_gif_title": "Art Conform GIF by Ek dojo",
+    "gif_urls": [
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5N29mOHp3NGN0eTY1Mms3cDJpbmE0ZnN6NHZpOGMzNXllem8yNWUxNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VeT8YIhHBSCKovzmES/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5N29mOHp3NGN0eTY1Mms3cDJpbmE0ZnN6NHZpOGMzNXllem8yNWUxNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4S3P68PpJPYZ1IQe7J/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5N29mOHp3NGN0eTY1Mms3cDJpbmE0ZnN6NHZpOGMzNXllem8yNWUxNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hmHyb2qve15RHdbUuX/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5N29mOHp3NGN0eTY1Mms3cDJpbmE0ZnN6NHZpOGMzNXllem8yNWUxNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/GfGbbdEkovMhUgVYPZ/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5N29mOHp3NGN0eTY1Mms3cDJpbmE0ZnN6NHZpOGMzNXllem8yNWUxNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/rtmUYIatyiO8UUfLYt/200w.gif"
+    ]
+  },
+  "Fact Check": {
+    "term": "fact check",
+    "label": "Fact Check",
+    "cluster": "information",
+    "total_count": 387,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NTVoNDM0a2lmdno4Nzd2anRyOTFlcGQ4Nm9ib3FjMXEyamkyMmRobSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YVT4w8N5O7qSiftMNq/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NTVoNDM0a2lmdno4Nzd2anRyOTFlcGQ4Nm9ib3FjMXEyamkyMmRobSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YVT4w8N5O7qSiftMNq/200w_s.gif",
+    "top_gif_title": "Truth GIF",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NTVoNDM0a2lmdno4Nzd2anRyOTFlcGQ4Nm9ib3FjMXEyamkyMmRobSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YVT4w8N5O7qSiftMNq/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NTVoNDM0a2lmdno4Nzd2anRyOTFlcGQ4Nm9ib3FjMXEyamkyMmRobSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lVrwaz7p7aSoCiPLHl/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NTVoNDM0a2lmdno4Nzd2anRyOTFlcGQ4Nm9ib3FjMXEyamkyMmRobSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bxZSFB2beVt5sq9wVn/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NTVoNDM0a2lmdno4Nzd2anRyOTFlcGQ4Nm9ib3FjMXEyamkyMmRobSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YOvKGbfMkpPcWTkO5u/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NTVoNDM0a2lmdno4Nzd2anRyOTFlcGQ4Nm9ib3FjMXEyamkyMmRobSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/olLyDUpnv5z3xhmeyB/200w.gif"
+    ]
+  },
+  "AI": {
+    "term": "artificial intelligence",
+    "label": "AI",
+    "cluster": "technology",
+    "total_count": 500,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bW85MmdnNGVzZjVyazY2MTgxdXlua3B4ZW5xNHJ5c3A1bXBsMm5hdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CVtNe84hhYF9u/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bW85MmdnNGVzZjVyazY2MTgxdXlua3B4ZW5xNHJ5c3A1bXBsMm5hdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CVtNe84hhYF9u/200w_s.gif",
+    "top_gif_title": "artificial intelligence futurism GIF",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bW85MmdnNGVzZjVyazY2MTgxdXlua3B4ZW5xNHJ5c3A1bXBsMm5hdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CVtNe84hhYF9u/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bW85MmdnNGVzZjVyazY2MTgxdXlua3B4ZW5xNHJ5c3A1bXBsMm5hdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zN5xfuJBtbpnRDZncm/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bW85MmdnNGVzZjVyazY2MTgxdXlua3B4ZW5xNHJ5c3A1bXBsMm5hdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tczJoRU7XwBS8/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bW85MmdnNGVzZjVyazY2MTgxdXlua3B4ZW5xNHJ5c3A1bXBsMm5hdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4jqmPFiUkTCVbCPpiW/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5bW85MmdnNGVzZjVyazY2MTgxdXlua3B4ZW5xNHJ5c3A1bXBsMm5hdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HZFxBu5dMqwA1cIB1k/200w.gif"
+    ]
+  },
+  "ChatGPT": {
+    "term": "chatgpt",
+    "label": "ChatGPT",
+    "cluster": "technology",
+    "total_count": 500,
+    "top_gif_url": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5czF3bGZsbWp2Z3dqYTFjc3hmNmcyZjhldXp4Y2RwazRrbGtiaWVwcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/0lGd2OXXHe4tFhb7Wh/200w.gif",
+    "top_gif_preview": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5czF3bGZsbWp2Z3dqYTFjc3hmNmcyZjhldXp4Y2RwazRrbGtiaWVwcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/0lGd2OXXHe4tFhb7Wh/200w_s.gif",
+    "top_gif_title": "GIF by Pudgy Penguins",
+    "gif_urls": [
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5czF3bGZsbWp2Z3dqYTFjc3hmNmcyZjhldXp4Y2RwazRrbGtiaWVwcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/0lGd2OXXHe4tFhb7Wh/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5czF3bGZsbWp2Z3dqYTFjc3hmNmcyZjhldXp4Y2RwazRrbGtiaWVwcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qAtZM2gvjWhPjmclZE/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5czF3bGZsbWp2Z3dqYTFjc3hmNmcyZjhldXp4Y2RwazRrbGtiaWVwcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5k5vZwRFZR5aZeniqb/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5czF3bGZsbWp2Z3dqYTFjc3hmNmcyZjhldXp4Y2RwazRrbGtiaWVwcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f0VbswUmSY6X1cBz4C/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5czF3bGZsbWp2Z3dqYTFjc3hmNmcyZjhldXp4Y2RwazRrbGtiaWVwcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/stkTZ52YoroVhKZc1l/200w.gif"
+    ]
+  },
+  "Robot": {
+    "term": "robot",
+    "label": "Robot",
+    "cluster": "technology",
+    "total_count": 500,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmxwaGltdnpvamdsenYyNG1vd2Q2djl2YmM5aHlzaGdrNmFlNHYwbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tczJoRU7XwBS8/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmxwaGltdnpvamdsenYyNG1vd2Q2djl2YmM5aHlzaGdrNmFlNHYwbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tczJoRU7XwBS8/200w_s.gif",
+    "top_gif_title": "Artificial Intelligence Dancing GIF",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmxwaGltdnpvamdsenYyNG1vd2Q2djl2YmM5aHlzaGdrNmFlNHYwbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tczJoRU7XwBS8/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmxwaGltdnpvamdsenYyNG1vd2Q2djl2YmM5aHlzaGdrNmFlNHYwbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ABVK96HgZvWI9SBbXr/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmxwaGltdnpvamdsenYyNG1vd2Q2djl2YmM5aHlzaGdrNmFlNHYwbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/UogSmj4xDjQZO/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmxwaGltdnpvamdsenYyNG1vd2Q2djl2YmM5aHlzaGdrNmFlNHYwbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7rJE4vH3ItKDu/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmxwaGltdnpvamdsenYyNG1vd2Q2djl2YmM5aHlzaGdrNmFlNHYwbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Owjz8xZ6akD9S/200w.gif"
+    ]
+  },
+  "Surveillance": {
+    "term": "surveillance",
+    "label": "Surveillance",
+    "cluster": "technology",
+    "total_count": 464,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5cmRkMnI4OXBuMGE5aTAxbzd5eWZrOG10dDBqYTFjNTB5N3NxM2IxZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HUbESbGqYn8kNlC/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5cmRkMnI4OXBuMGE5aTAxbzd5eWZrOG10dDBqYTFjNTB5N3NxM2IxZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HUbESbGqYn8kNlC/200w_s.gif",
+    "top_gif_title": "control room spy GIF by trainline",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5cmRkMnI4OXBuMGE5aTAxbzd5eWZrOG10dDBqYTFjNTB5N3NxM2IxZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HUbESbGqYn8kNlC/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5cmRkMnI4OXBuMGE5aTAxbzd5eWZrOG10dDBqYTFjNTB5N3NxM2IxZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XAEfNyJgegrcC6vI58/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5cmRkMnI4OXBuMGE5aTAxbzd5eWZrOG10dDBqYTFjNTB5N3NxM2IxZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FZuC4kSIAe7MTXyHuJ/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5cmRkMnI4OXBuMGE5aTAxbzd5eWZrOG10dDBqYTFjNTB5N3NxM2IxZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oxHQHzFo3g5oYAZhe/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5cmRkMnI4OXBuMGE5aTAxbzd5eWZrOG10dDBqYTFjNTB5N3NxM2IxZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f9kDGVsQGxBPvUpffh/200w.gif"
+    ]
+  },
+  "Trump": {
+    "term": "donald trump",
+    "label": "Trump",
+    "cluster": "politics",
+    "total_count": 500,
+    "top_gif_url": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmpyOHYyZjU5YTdzemhkbjY4NjQ0ZjI1bzZ6MjB1OWxlMWpiY3ptMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/fRtK3t3i67tRK4dfez/200w.gif",
+    "top_gif_preview": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmpyOHYyZjU5YTdzemhkbjY4NjQ0ZjI1bzZ6MjB1OWxlMWpiY3ptMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/fRtK3t3i67tRK4dfez/200w_s.gif",
+    "top_gif_title": "Donald Trump GIF by Backhaus Verlag",
+    "gif_urls": [
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmpyOHYyZjU5YTdzemhkbjY4NjQ0ZjI1bzZ6MjB1OWxlMWpiY3ptMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/fRtK3t3i67tRK4dfez/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmpyOHYyZjU5YTdzemhkbjY4NjQ0ZjI1bzZ6MjB1OWxlMWpiY3ptMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTiTnHXbRoaZ1B1Mo8/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmpyOHYyZjU5YTdzemhkbjY4NjQ0ZjI1bzZ6MjB1OWxlMWpiY3ptMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/dwmTtW4IuyDzOpLgqO/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmpyOHYyZjU5YTdzemhkbjY4NjQ0ZjI1bzZ6MjB1OWxlMWpiY3ptMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iBLzl03SGhKqcucG0o/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dmpyOHYyZjU5YTdzemhkbjY4NjQ0ZjI1bzZ6MjB1OWxlMWpiY3ptMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/sbnHm4yZKFmpy/200w.gif"
+    ]
+  },
+  "Election": {
+    "term": "election",
+    "label": "Election",
+    "cluster": "politics",
+    "total_count": 500,
+    "top_gif_url": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MXR1aW5qM3Rwb3R1a2ZjeHgxZzRnZml2cXp5OHJoYzNla3lrOWtyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/0UdYdLYyYBv7auWkdA/200w.gif",
+    "top_gif_preview": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MXR1aW5qM3Rwb3R1a2ZjeHgxZzRnZml2cXp5OHJoYzNla3lrOWtyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/0UdYdLYyYBv7auWkdA/200w_s.gif",
+    "top_gif_title": "On My Mind Election GIF",
+    "gif_urls": [
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MXR1aW5qM3Rwb3R1a2ZjeHgxZzRnZml2cXp5OHJoYzNla3lrOWtyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/0UdYdLYyYBv7auWkdA/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MXR1aW5qM3Rwb3R1a2ZjeHgxZzRnZml2cXp5OHJoYzNla3lrOWtyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l3diU8csLCa1UcBc4/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MXR1aW5qM3Rwb3R1a2ZjeHgxZzRnZml2cXp5OHJoYzNla3lrOWtyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jtd26qRGDzgjiqcwbp/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MXR1aW5qM3Rwb3R1a2ZjeHgxZzRnZml2cXp5OHJoYzNla3lrOWtyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/muJhgm6uTO59MuYz7q/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MXR1aW5qM3Rwb3R1a2ZjeHgxZzRnZml2cXp5OHJoYzNla3lrOWtyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/fveKCnZRN7aOrtWNfj/200w.gif"
+    ]
+  },
+  "Democracy": {
+    "term": "democracy",
+    "label": "Democracy",
+    "cluster": "politics",
+    "total_count": 500,
+    "top_gif_url": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MTNrbHBkMWJ3M2w2ZHN3cXNleWd6M252azdwdzV0b202NGU3ZDdqYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ucXFcY1FdKaT6/200w.gif",
+    "top_gif_preview": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MTNrbHBkMWJ3M2w2ZHN3cXNleWd6M252azdwdzV0b202NGU3ZDdqYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ucXFcY1FdKaT6/200w_s.gif",
+    "top_gif_title": "democracy GIF",
+    "gif_urls": [
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MTNrbHBkMWJ3M2w2ZHN3cXNleWd6M252azdwdzV0b202NGU3ZDdqYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ucXFcY1FdKaT6/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MTNrbHBkMWJ3M2w2ZHN3cXNleWd6M252azdwdzV0b202NGU3ZDdqYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l06tL43m84zi7rhNrH/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MTNrbHBkMWJ3M2w2ZHN3cXNleWd6M252azdwdzV0b202NGU3ZDdqYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/dyMXivW0CCuiBLNeVk/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MTNrbHBkMWJ3M2w2ZHN3cXNleWd6M252azdwdzV0b202NGU3ZDdqYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Ar96gc867vA86cTMxm/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5MTNrbHBkMWJ3M2w2ZHN3cXNleWd6M252azdwdzV0b202NGU3ZDdqYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kvMgv5qzWlf78BhJZ8/200w.gif"
+    ]
+  },
+  "Censorship": {
+    "term": "censorship",
+    "label": "Censorship",
+    "cluster": "politics",
+    "total_count": 219,
+    "top_gif_url": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZzlqMTFlZHNvOXVzZGhwZW00a3FsM3g4aG84ZmQ2NDJvbTE1ZTUxeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XP95CPLn7dkVMlXXF5/200w.gif",
+    "top_gif_preview": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZzlqMTFlZHNvOXVzZGhwZW00a3FsM3g4aG84ZmQ2NDJvbTE1ZTUxeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XP95CPLn7dkVMlXXF5/200w_s.gif",
+    "top_gif_title": "Box Block GIF by Pixel Parade App",
+    "gif_urls": [
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZzlqMTFlZHNvOXVzZGhwZW00a3FsM3g4aG84ZmQ2NDJvbTE1ZTUxeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XP95CPLn7dkVMlXXF5/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZzlqMTFlZHNvOXVzZGhwZW00a3FsM3g4aG84ZmQ2NDJvbTE1ZTUxeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Kc2QB25AJizYYCYcDM/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZzlqMTFlZHNvOXVzZGhwZW00a3FsM3g4aG84ZmQ2NDJvbTE1ZTUxeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lkLhZYCbDJsxxIExUm/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZzlqMTFlZHNvOXVzZGhwZW00a3FsM3g4aG84ZmQ2NDJvbTE1ZTUxeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZrInSHMP5ytK8/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5ZzlqMTFlZHNvOXVzZGhwZW00a3FsM3g4aG84ZmQ2NDJvbTE1ZTUxeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/v3EeX1Bjg7IO5ZXx0o/200w.gif"
+    ]
+  },
+  "Taylor Swift": {
+    "term": "taylor swift",
+    "label": "Taylor Swift",
+    "cluster": "culture",
+    "total_count": 500,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aGhhbGk2cDE2MWEwcDNvb2J3MHRkZjRtamxiNzE2cjFpbmdkcmZpdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3ohBVbUzyTH3sWw1eU/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aGhhbGk2cDE2MWEwcDNvb2J3MHRkZjRtamxiNzE2cjFpbmdkcmZpdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3ohBVbUzyTH3sWw1eU/200w_s.gif",
+    "top_gif_title": "Taylor Swift Love GIF",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aGhhbGk2cDE2MWEwcDNvb2J3MHRkZjRtamxiNzE2cjFpbmdkcmZpdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3ohBVbUzyTH3sWw1eU/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aGhhbGk2cDE2MWEwcDNvb2J3MHRkZjRtamxiNzE2cjFpbmdkcmZpdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NmrqUdwGXPOog/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aGhhbGk2cDE2MWEwcDNvb2J3MHRkZjRtamxiNzE2cjFpbmdkcmZpdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bz1bv0Es9SWcmpKmuv/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aGhhbGk2cDE2MWEwcDNvb2J3MHRkZjRtamxiNzE2cjFpbmdkcmZpdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3otWpAMUG1n5CHSVtm/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aGhhbGk2cDE2MWEwcDNvb2J3MHRkZjRtamxiNzE2cjFpbmdkcmZpdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/piTERt2CEdrLt2WLv0/200w.gif"
+    ]
+  },
+  "Celebrity": {
+    "term": "celebrity",
+    "label": "Celebrity",
+    "cluster": "culture",
+    "total_count": 500,
+    "top_gif_url": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eHNwZXNhemZzZmhpbzdqcm1xd3Q3cjVsNmU5dDA1N3Q3cmIzM2V4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/10MGhMGr4WCiVW/200w.gif",
+    "top_gif_preview": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eHNwZXNhemZzZmhpbzdqcm1xd3Q3cjVsNmU5dDA1N3Q3cmIzM2V4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/10MGhMGr4WCiVW/200w_s.gif",
+    "top_gif_title": "celebrity behavior GIF",
+    "gif_urls": [
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eHNwZXNhemZzZmhpbzdqcm1xd3Q3cjVsNmU5dDA1N3Q3cmIzM2V4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/10MGhMGr4WCiVW/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eHNwZXNhemZzZmhpbzdqcm1xd3Q3cjVsNmU5dDA1N3Q3cmIzM2V4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/14rEabvlsS4lOg/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eHNwZXNhemZzZmhpbzdqcm1xd3Q3cjVsNmU5dDA1N3Q3cmIzM2V4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TvLi3XpSBs85W/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eHNwZXNhemZzZmhpbzdqcm1xd3Q3cjVsNmU5dDA1N3Q3cmIzM2V4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/U5jxxs9OVK2Aw/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5eHNwZXNhemZzZmhpbzdqcm1xd3Q3cjVsNmU5dDA1N3Q3cmIzM2V4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0Iy2BmvXf6YeNz2w/200w.gif"
+    ]
+  },
+  "Influencer": {
+    "term": "influencer",
+    "label": "Influencer",
+    "cluster": "culture",
+    "total_count": 500,
+    "top_gif_url": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aWV4Y3I1ZW12emYyZWw0d3k5NGNoeXh5czgwc25wMDJqcDBqNjE0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/duIJQ3HOfw1kYrrzi5/200w.gif",
+    "top_gif_preview": "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aWV4Y3I1ZW12emYyZWw0d3k5NGNoeXh5czgwc25wMDJqcDBqNjE0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/duIJQ3HOfw1kYrrzi5/200w_s.gif",
+    "top_gif_title": "Influencer Reels GIF by The She Brief",
+    "gif_urls": [
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aWV4Y3I1ZW12emYyZWw0d3k5NGNoeXh5czgwc25wMDJqcDBqNjE0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/duIJQ3HOfw1kYrrzi5/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aWV4Y3I1ZW12emYyZWw0d3k5NGNoeXh5czgwc25wMDJqcDBqNjE0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WRcYO7MFySbjDEt5wW/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aWV4Y3I1ZW12emYyZWw0d3k5NGNoeXh5czgwc25wMDJqcDBqNjE0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jnLqJBQwwUJXv096uf/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aWV4Y3I1ZW12emYyZWw0d3k5NGNoeXh5czgwc25wMDJqcDBqNjE0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5bgIOwoAcZ2exrksog/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5aWV4Y3I1ZW12emYyZWw0d3k5NGNoeXh5czgwc25wMDJqcDBqNjE0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/17egWhioAySy9y6Hoi/200w.gif"
+    ]
+  },
+  "Attention": {
+    "term": "attention",
+    "label": "Attention",
+    "cluster": "culture",
+    "total_count": 500,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5b2tlMWFpeGl0dmYzbWRxcGJ6cW0ybGFrOWtzam1yMTFiNG45aXJ3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cYaBD8kxE4PZudHBRA/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5b2tlMWFpeGl0dmYzbWRxcGJ6cW0ybGFrOWtzam1yMTFiNG45aXJ3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cYaBD8kxE4PZudHBRA/200w_s.gif",
+    "top_gif_title": "Tv Show News GIF by CBBC",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5b2tlMWFpeGl0dmYzbWRxcGJ6cW0ybGFrOWtzam1yMTFiNG45aXJ3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cYaBD8kxE4PZudHBRA/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5b2tlMWFpeGl0dmYzbWRxcGJ6cW0ybGFrOWtzam1yMTFiNG45aXJ3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1fMjj5j2Z7chq/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5b2tlMWFpeGl0dmYzbWRxcGJ6cW0ybGFrOWtzam1yMTFiNG45aXJ3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PcwpnqpwAfRK/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5b2tlMWFpeGl0dmYzbWRxcGJ6cW0ybGFrOWtzam1yMTFiNG45aXJ3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iGtlFzmLReCn5qBJlY/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5b2tlMWFpeGl0dmYzbWRxcGJ6cW0ybGFrOWtzam1yMTFiNG45aXJ3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/BXOEmFSzNkOObZhIA3/200w.gif"
+    ]
+  },
+  "Boredom": {
+    "term": "boredom",
+    "label": "Boredom",
+    "cluster": "culture",
+    "total_count": 500,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dHR0ejlucWIzbW1zNTd2OXNwZjIwenpsNmFmNGlpNmc2ZW15NXJhcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h41uUhjop8NJCI7CQX/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dHR0ejlucWIzbW1zNTd2OXNwZjIwenpsNmFmNGlpNmc2ZW15NXJhcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h41uUhjop8NJCI7CQX/200w_s.gif",
+    "top_gif_title": "Im So Bored GIF",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dHR0ejlucWIzbW1zNTd2OXNwZjIwenpsNmFmNGlpNmc2ZW15NXJhcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h41uUhjop8NJCI7CQX/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dHR0ejlucWIzbW1zNTd2OXNwZjIwenpsNmFmNGlpNmc2ZW15NXJhcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/H9Li75tmlnwkg/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dHR0ejlucWIzbW1zNTd2OXNwZjIwenpsNmFmNGlpNmc2ZW15NXJhcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JrzldkP6oC3f2/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dHR0ejlucWIzbW1zNTd2OXNwZjIwenpsNmFmNGlpNmc2ZW15NXJhcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3d5O10XObbr8LW4bDY/200w.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5dHR0ejlucWIzbW1zNTd2OXNwZjIwenpsNmFmNGlpNmc2ZW15NXJhcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YTz36C5B2vpZe/200w.gif"
+    ]
+  },
+  "Climate Change": {
+    "term": "climate change",
+    "label": "Climate Change",
+    "cluster": "climate",
+    "total_count": 500,
+    "top_gif_url": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YmdlOG96emN1YnpjeHAzenpleTltZnRqaXAyOWF1MWdrMHBlcXByaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mf8UbIDew7e8g/200w.gif",
+    "top_gif_preview": "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YmdlOG96emN1YnpjeHAzenpleTltZnRqaXAyOWF1MWdrMHBlcXByaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mf8UbIDew7e8g/200w_s.gif",
+    "top_gif_title": "Climate Change Earth GIF",
+    "gif_urls": [
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YmdlOG96emN1YnpjeHAzenpleTltZnRqaXAyOWF1MWdrMHBlcXByaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mf8UbIDew7e8g/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YmdlOG96emN1YnpjeHAzenpleTltZnRqaXAyOWF1MWdrMHBlcXByaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/llCcLPkoz456ieiJ6a/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YmdlOG96emN1YnpjeHAzenpleTltZnRqaXAyOWF1MWdrMHBlcXByaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cObIzBCAkFxW60ORYj/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YmdlOG96emN1YnpjeHAzenpleTltZnRqaXAyOWF1MWdrMHBlcXByaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JlZdzxVq0C1eku0V4h/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5YmdlOG96emN1YnpjeHAzenpleTltZnRqaXAyOWF1MWdrMHBlcXByaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KYWdVhA36WuRLyiy9H/200w.gif"
+    ]
+  },
+  "Flood": {
+    "term": "flood",
+    "label": "Flood",
+    "cluster": "climate",
+    "total_count": 500,
+    "top_gif_url": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NjNwcHFqZmRqYnJ1c3BxNXUwMnRkNWx5cmJoajNvaXFlc2Zlam9iYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9TbgGqK1KhpnNORo9a/200w.gif",
+    "top_gif_preview": "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NjNwcHFqZmRqYnJ1c3BxNXUwMnRkNWx5cmJoajNvaXFlc2Zlam9iYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9TbgGqK1KhpnNORo9a/200w_s.gif",
+    "top_gif_title": "Water Fail GIF",
+    "gif_urls": [
+      "https://media4.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NjNwcHFqZmRqYnJ1c3BxNXUwMnRkNWx5cmJoajNvaXFlc2Zlam9iYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9TbgGqK1KhpnNORo9a/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NjNwcHFqZmRqYnJ1c3BxNXUwMnRkNWx5cmJoajNvaXFlc2Zlam9iYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7uWf15xyHwU3S/200w.gif",
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NjNwcHFqZmRqYnJ1c3BxNXUwMnRkNWx5cmJoajNvaXFlc2Zlam9iYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jFem9jFckQ6oU/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NjNwcHFqZmRqYnJ1c3BxNXUwMnRkNWx5cmJoajNvaXFlc2Zlam9iYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KYWdVhA36WuRLyiy9H/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NjNwcHFqZmRqYnJ1c3BxNXUwMnRkNWx5cmJoajNvaXFlc2Zlam9iYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/13r7Nnon5WofnO/200w.gif"
+    ]
+  },
+  "Wildfire": {
+    "term": "wildfire",
+    "label": "Wildfire",
+    "cluster": "climate",
+    "total_count": 335,
+    "top_gif_url": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NXI4NGJ6NzJzdWU4aHgwODRmZm1hZWE0dWJpcTZvcDJrNzJhdGJjYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Wp7FNB13QfqEGpB00a/200w.gif",
+    "top_gif_preview": "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NXI4NGJ6NzJzdWU4aHgwODRmZm1hZWE0dWJpcTZvcDJrNzJhdGJjYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Wp7FNB13QfqEGpB00a/200w_s.gif",
+    "top_gif_title": "",
+    "gif_urls": [
+      "https://media2.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NXI4NGJ6NzJzdWU4aHgwODRmZm1hZWE0dWJpcTZvcDJrNzJhdGJjYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Wp7FNB13QfqEGpB00a/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NXI4NGJ6NzJzdWU4aHgwODRmZm1hZWE0dWJpcTZvcDJrNzJhdGJjYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MbFfMeic2KPJXT73nO/200w.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NXI4NGJ6NzJzdWU4aHgwODRmZm1hZWE0dWJpcTZvcDJrNzJhdGJjYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/D3kRauP3lf27GaGmzh/200w.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NXI4NGJ6NzJzdWU4aHgwODRmZm1hZWE0dWJpcTZvcDJrNzJhdGJjYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pOrlU886i5LoGmBnxh/200w.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPWM3ZTdiNzM5NXI4NGJ6NzJzdWU4aHgwODRmZm1hZWE0dWJpcTZvcDJrNzJhdGJjYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KATYWpCuLOjOo1eM4H/200w.gif"
+    ]
+  }
+}

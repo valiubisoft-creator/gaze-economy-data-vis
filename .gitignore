@@ -1,0 +1,17 @@
+# Python
+gaze-economy/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAZE ECONOMY — GIF CITY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #040408;
+      --cyan:     #00ffff;
+      --magenta:  #ff00ff;
+      --green:    #00ff88;
+      --orange:   #ffaa00;
+      --purple:   #bb44ff;
+      --pink:     #ff44aa;
+      --teal:     #00ddaa;
+      --red:      #ff2255;
+      --text:     #c4cce8;
+      --dim:      #3a4060;
+      --gif-size: 60px;   /* set dynamically by JS */
+      --label-h:  84px;   /* height of the label zone below the ground line */
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      overflow: hidden;
+    }
+
+    /* ── SCANLINES ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent, transparent 2px,
+        rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 4px
+      );
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    /* ── CRT FLICKER ── */
+    @keyframes flicker {
+      0%,87%,89%,91%,93%,100% { opacity:1; }
+      88%  { opacity:0.80; }
+      90%  { opacity:0.94; }
+      92%  { opacity:0.86; }
+    }
+    body { animation: flicker 16s infinite; }
+
+    /* ── BLINK ── */
+    @keyframes blink {
+      0%,100% { opacity:1; } 50% { opacity:0; }
+    }
+
+    /* ── GLOW HELPERS ── */
+    .glow-c { color:var(--cyan);   text-shadow:0 0 8px var(--cyan),  0 0 22px var(--cyan),  0 0 44px #0044ff; }
+    .glow-m { color:var(--magenta);text-shadow:0 0 8px var(--magenta),0 0 22px var(--magenta),0 0 44px #aa00cc; }
+
+
+    /* ══════════════════════════════════════════
+       INTRO
+    ══════════════════════════════════════════ */
+    #intro {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--bg);
+      transition: opacity 1.2s ease;
+    }
+
+    #stars-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+    }
+
+    .intro-grid {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 220px;
+      background:
+        repeating-linear-gradient(90deg,
+          transparent, transparent 59px,
+          rgba(0,255,255,0.11) 59px, rgba(0,255,255,0.11) 60px),
+        repeating-linear-gradient(0deg,
+          transparent, transparent 29px,
+          rgba(0,255,255,0.08) 29px, rgba(0,255,255,0.08) 30px);
+      transform: perspective(320px) rotateX(42deg);
+      transform-origin: bottom center;
+      mask-image: linear-gradient(to top, rgba(0,255,255,0.15), transparent 80%);
+    }
+
+    .intro-content {
+      position: relative; z-index: 1;
+      text-align: center;
+      max-width: 680px;
+      padding: 40px 32px;
+      display: flex; flex-direction: column; align-items: center; gap: 28px;
+    }
+
+    .intro-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--cyan);
+      letter-spacing: 6px;
+      opacity: 0.55;
+    }
+
+    .intro-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(20px, 3.5vw, 50px);
+      line-height: 1.5;
+      color: var(--cyan);
+      text-shadow:
+        0 0 8px var(--cyan), 0 0 20px var(--cyan),
+        0 0 50px #0044ff,   0 0 100px #0022aa;
+    }
+
+    .intro-desc {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      line-height: 1.9;
+      color: #7a8aaa;
+      letter-spacing: 0.3px;
+      max-width: 520px;
+    }
+
+    @keyframes pulse-border {
+      0%,100% {
+        border-color: var(--cyan);
+        box-shadow: 0 0 14px var(--cyan), inset 0 0 10px rgba(0,255,255,0.07);
+        color: var(--cyan);
+      }
+      50% {
+        border-color: rgba(0,255,255,0.3);
+        box-shadow: 0 0 4px var(--cyan);
+        color: rgba(0,255,255,0.5);
+      }
+    }
+
+    #enter-btn {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 11px;
+      color: var(--cyan);
+      background: transparent;
+      border: 2px solid var(--cyan);
+      padding: 18px 32px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      animation: pulse-border 2s ease-in-out infinite;
+      margin-top: 8px;
+    }
+    #enter-btn:hover {
+      background: var(--cyan); color: #000;
+      animation: none;
+      box-shadow: 0 0 24px var(--cyan), 0 0 50px rgba(0,255,255,0.35);
+    }
+
+
+    /* ══════════════════════════════════════════
+       LOADING
+    ══════════════════════════════════════════ */
+    #loading {
+      position: fixed; inset: 0; z-index: 90;
+      background: var(--bg);
+      display: none; flex-direction: column;
+      align-items: center; justify-content: center; gap: 20px;
+    }
+    #loading.active { display: flex; }
+
+    .load-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 13px;
+      color: var(--cyan);
+      text-shadow: 0 0 12px var(--cyan);
+    }
+    .load-cursor { display:inline-block; animation: blink 0.9s step-end infinite; }
+
+    #load-status {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      min-height: 20px;
+      letter-spacing: 1px;
+    }
+
+    .prog-outer {
+      width: min(400px, 80vw); height: 14px;
+      border: 2px solid var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+    }
+    .prog-inner {
+      height: 100%; background: var(--cyan);
+      width: 0%; transition: width 0.25s ease;
+      box-shadow: 0 0 8px var(--cyan);
+    }
+    #load-count {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px; color: var(--dim);
+    }
+
+
+    /* ══════════════════════════════════════════
+       MAIN VIZ
+    ══════════════════════════════════════════ */
+    #main {
+      position: fixed; inset: 0;
+      display: none; flex-direction: column;
+    }
+    #main.active { display: flex; }
+
+    /* ── header ── */
+    #header {
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px;
+      height: 52px;
+      border-bottom: 1px solid rgba(0,255,255,0.18);
+      background: rgba(4,4,8,0.96);
+      z-index: 20;
+      gap: 16px;
+    }
+
+    .hdr-left {
+      display: flex; align-items: center; gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .hdr-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      color: var(--cyan);
+      text-shadow: 0 0 8px var(--cyan);
+      letter-spacing: 1px;
+    }
+
+    .hdr-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px; color: var(--dim);
+      letter-spacing: 1.5px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .hdr-right {
+      display: flex; align-items: center; gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .hdr-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px; color: var(--dim);
+      letter-spacing: 3px;
+    }
+
+    /* ── animated eye button ── */
+    #eye-btn {
+      background: none; border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex; align-items: center;
+      position: relative;
+    }
+    #eye-btn:hover .eye-outline { stroke: #fff; }
+    #eye-btn:hover .eye-iris   { stroke: #fff; }
+    #eye-btn:hover .eye-pupil  { fill:  #fff; }
+
+    /* eye outline — static */
+    .eye-outline {
+      stroke: var(--cyan);
+      stroke-width: 1.5;
+      fill: none;
+      filter: drop-shadow(0 0 3px var(--cyan));
+      transition: stroke 0.2s;
+    }
+
+    /* iris blinks */
+    @keyframes iris-blink {
+      0%,85%,100% { transform: scaleY(1); }
+      92% { transform: scaleY(0.04); }
+    }
+    .eye-iris {
+      stroke: var(--cyan); stroke-width: 1.5; fill: none;
+      transform-origin: 16px 11px;
+      animation: iris-blink 4s ease-in-out infinite;
+      transition: stroke 0.2s;
+    }
+
+    /* pupil scans left-right and pulses */
+    @keyframes pupil-scan {
+      0%   { transform: translateX(0)    scale(1); }
+      20%  { transform: translateX(-3px) scale(0.85); }
+      50%  { transform: translateX(3px)  scale(1); }
+      80%  { transform: translateX(-2px) scale(0.9); }
+      100% { transform: translateX(0)    scale(1); }
+    }
+    .eye-pupil {
+      fill: var(--cyan);
+      transform-origin: 16px 11px;
+      animation: pupil-scan 3s ease-in-out infinite;
+      transition: fill 0.2s;
+      filter: drop-shadow(0 0 2px var(--cyan));
+    }
+
+    /* lid flap over iris during blink */
+    @keyframes lid-blink {
+      0%,85%,100% { transform: scaleY(0); }
+      92% { transform: scaleY(1); }
+    }
+    .eye-lid {
+      fill: var(--bg);
+      transform-origin: 16px 11px;
+      animation: lid-blink 4s ease-in-out infinite;
+    }
+
+    /* ── city wrapper ── */
+    #city-wrapper {
+      flex: 1;
+      overflow-x: auto;
+      overflow-y: hidden;
+      position: relative;
+      /* CSS ground line rendered as a gradient stripe */
+      background-image: linear-gradient(
+        to bottom,
+        transparent calc(100% - var(--label-h) - 2px),
+        rgba(0,255,255,0.65) calc(100% - var(--label-h) - 2px),
+        rgba(0,255,255,0.65) calc(100% - var(--label-h)),
+        transparent calc(100% - var(--label-h))
+      );
+    }
+
+    /* glow on ground line using a pseudo-element */
+    #city-wrapper::before {
+      content: '';
+      position: absolute;
+      bottom: var(--label-h);
+      left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(to bottom,
+        transparent, rgba(0,255,255,0.18), transparent);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* scrollbar */
+    #city-wrapper::-webkit-scrollbar { height: 4px; }
+    #city-wrapper::-webkit-scrollbar-track { background: transparent; }
+    #city-wrapper::-webkit-scrollbar-thumb {
+      background: var(--cyan);
+      box-shadow: 0 0 6px var(--cyan);
+    }
+
+    /* ── city ── */
+    #city {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      height: 100%;
+      padding: 24px 60px var(--label-h) 60px;
+      gap: 0;
+      min-width: max-content;
+    }
+
+    /* ── cluster group ── */
+    .cluster-group {
+      display: flex; flex-direction: column; align-items: center;
+    }
+
+    .cluster-cols {
+      display: flex; flex-direction: row;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    /* cluster name sits inside the label zone */
+    .cluster-name {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px;
+      letter-spacing: 2px;
+      text-align: center;
+      height: var(--label-h);
+      display: flex; align-items: flex-end;
+      padding-bottom: 6px;
+      white-space: nowrap;
+    }
+
+    /* ── cluster separator ── */
+    .cluster-sep {
+      flex-shrink: 0;
+      width: 32px;
+      align-self: stretch;
+      position: relative;
+    }
+    .cluster-sep::after {
+      content: '';
+      position: absolute;
+      top: 8%;
+      bottom: var(--label-h);
+      left: 50%; transform: translateX(-50%);
+      width: 1px;
+      background: currentColor;
+      opacity: 0.22;
+      box-shadow: 0 0 6px currentColor;
+    }
+
+    /* ── keyword column ── */
+    .kw-col {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    @keyframes col-appear {
+      from { opacity:0; transform: translateY(10px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    .kw-col { animation: col-appear 0.45s ease both; }
+
+    /* ── gif stack ── */
+    .gif-stack {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+
+    .gif-tile {
+      width: var(--gif-size); height: var(--gif-size);
+      object-fit: cover; display: block;
+      cursor: pointer;
+      background: rgba(0,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      filter: brightness(0.86) saturate(1.1);
+      transition: transform 0.12s, filter 0.12s;
+      position: relative; z-index: 1;
+    }
+    .gif-tile:hover {
+      transform: scale(1.18);
+      filter: brightness(1.3) saturate(1.45);
+      z-index: 50;
+      outline: 1px solid rgba(255,255,255,0.55);
+    }
+
+    /* ── keyword label — rotated, Space Mono ── */
+    /*
+      We use writing-mode + rotation so labels read bottom-to-top,
+      letting long keywords (SOCIAL MEDIA, CLIMATE CHANGE, etc.)
+      fit neatly in the label zone without overlapping neighbours.
+    */
+    .kw-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: 0.72;
+
+      /* rotate text to read bottom → top */
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-align: left;       /* after rotation: aligns text toward the ground */
+
+      /* height = max text run length visible in the label zone */
+      height: calc(var(--label-h) - 10px);
+      /* width matches column width */
+      width: var(--gif-size);
+
+      display: flex;
+      align-items: center;    /* centres label within the column width */
+      padding-top: 6px;
+    }
+
+
+    /* ══════════════════════════════════════════
+       GIF MODAL
+    ══════════════════════════════════════════ */
+    .overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(4,4,8,0.88);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center; justify-content: center;
+    }
+    .overlay.active { display: flex; }
+
+    /* shared modal box style */
+    .modal-box {
+      position: relative;
+      background: rgba(6,6,18,0.97);
+      border: 2px solid var(--modal-color, var(--cyan));
+      box-shadow:
+        0 0 28px var(--modal-color, var(--cyan)),
+        0 0 70px rgba(0,255,255,0.07),
+        inset 0 0 40px rgba(0,0,0,0.5);
+      animation: col-appear 0.2s ease;
+    }
+
+    /* ── GIF modal layout ── */
+    #gif-modal-box {
+      display: flex; gap: 32px; align-items: flex-start;
+      max-width: min(820px, 92vw);
+      padding: 32px;
+    }
+
+    #modal-img {
+      width: 260px; height: 260px;
+      object-fit: cover; flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .modal-info {
+      flex: 1; display: flex; flex-direction: column; gap: 14px;
+    }
+
+    .modal-kw {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px; line-height: 1.7;
+      word-break: break-word;
+    }
+
+    .modal-cluster-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px; letter-spacing: 4px; opacity: 0.65;
+    }
+
+    .modal-rule { height:1px; background: rgba(255,255,255,0.1); }
+
+    .modal-gif-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; color: #8899bb; line-height: 1.6;
+    }
+
+    .modal-id {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px; color: var(--dim); letter-spacing: 1px;
+    }
+
+    .modal-link {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px; color: var(--cyan);
+      text-decoration: none; letter-spacing: 1px;
+      align-self: flex-start;
+    }
+    .modal-link:hover { text-decoration: underline; }
+
+    .modal-close {
+      position: absolute; top: 14px; right: 14px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: var(--dim);
+      background: transparent;
+      border: 1px solid var(--dim);
+      padding: 7px 10px; cursor: pointer; letter-spacing: 1px;
+    }
+    .modal-close:hover { color: var(--cyan); border-color: var(--cyan); }
+
+
+    /* ══════════════════════════════════════════
+       ABOUT MODAL
+    ══════════════════════════════════════════ */
+    #about-modal-box {
+      max-width: min(760px, 90vw);
+      padding: 40px 44px;
+      display: flex; flex-direction: column; gap: 24px;
+      max-height: 85vh; overflow-y: auto;
+    }
+
+    /* scrollbar inside about modal */
+    #about-modal-box::-webkit-scrollbar { width: 4px; }
+    #about-modal-box::-webkit-scrollbar-track { background: transparent; }
+    #about-modal-box::-webkit-scrollbar-thumb { background: var(--cyan); }
+
+    .about-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 13px; color: var(--cyan);
+      text-shadow: 0 0 10px var(--cyan);
+      line-height: 1.7;
+    }
+
+    .about-section-head {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: var(--cyan);
+      letter-spacing: 2px; opacity: 0.7;
+      margin-bottom: -8px;
+    }
+
+    .about-body {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; line-height: 1.85;
+      color: #8899bb;
+    }
+
+    .about-body strong {
+      color: var(--text); font-weight: 700;
+    }
+
+    .about-rule { height:1px; background: rgba(0,255,255,0.15); }
+
+    /* cluster legend in about modal */
+    .cluster-legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+    }
+
+    .legend-item {
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+
+    .legend-dot {
+      width: 8px; height: 8px;
+      border-radius: 0; flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .legend-text {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px; line-height: 1.6; color: #7a8aaa;
+    }
+    .legend-text strong { color: var(--text); font-size: 10px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ INTRO ══════════ -->
+<div id="intro">
+  <canvas id="stars-canvas"></canvas>
+  <div class="intro-grid"></div>
+  <div class="intro-content">
+    <div class="intro-eyebrow">// SIGNAL FEED INITIALIZING //</div>
+    <h1 class="intro-title glow-c">GAZE<br>ECONOMY</h1>
+    <p class="intro-desc">
+      A visual map of how the internet codifies reality.<br>
+      Every GIF is an act of cultural absorption —<br>
+      a moment compressed into reflex.<br><br>
+      Explore 37 keywords across 7 domains of collective attention,<br>
+      rendered as a living city of meme language.
+    </p>
+    <button id="enter-btn">[ ENTER YOUR SIMULATION ]</button>
+  </div>
+</div>
+
+<!-- ══════════ LOADING ══════════ -->
+<div id="loading">
+  <div class="load-title">LOADING SIMULATION<span class="load-cursor">_</span></div>
+  <div id="load-status">CONNECTING TO GIPHY NETWORK...</div>
+  <div class="prog-outer"><div class="prog-inner" id="prog-bar"></div></div>
+  <div id="load-count">0 / 37</div>
+</div>
+
+<!-- ══════════ MAIN ══════════ -->
+<div id="main">
+  <div id="header">
+    <div class="hdr-left">
+      <!-- animated eye — opens about modal -->
+      <button id="eye-btn" title="About this project" aria-label="About">
+        <svg width="36" height="24" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- outer eye shape -->
+          <path class="eye-outline"
+            d="M1 11 C7 2 25 2 31 11 C25 20 7 20 1 11 Z"/>
+          <!-- iris (blinks) -->
+          <circle class="eye-iris" cx="16" cy="11" r="5.5"/>
+          <!-- lid covers iris during blink -->
+          <path class="eye-lid"
+            d="M10.5 11 C12 7 20 7 21.5 11 C20 15 12 15 10.5 11 Z"/>
+          <!-- pupil (scans) -->
+          <circle class="eye-pupil" cx="16" cy="11" r="2.2"/>
+        </svg>
+      </button>
+      <div class="hdr-title">GAZE ECONOMY</div>
+    </div>
+
+    <div class="hdr-meta">
+      GIF DENSITY &times; CULTURAL CODIFICATION &times; 37 KEYWORDS
+    </div>
+
+    <div class="hdr-right">
+      <div class="hdr-hint">← SCROLL →</div>
+    </div>
+  </div>
+
+  <div id="city-wrapper">
+    <div id="city"><!-- injected by JS --></div>
+  </div>
+</div>
+
+<!-- ══════════ GIF MODAL ══════════ -->
+<div id="gif-modal" class="overlay">
+  <div class="modal-box" id="gif-modal-box">
+    <button class="modal-close" id="gif-modal-close">[ ESC ]</button>
+    <img id="modal-img" src="" alt="" />
+    <div class="modal-info">
+      <div class="modal-kw" id="modal-kw"></div>
+      <div class="modal-cluster-tag" id="modal-cluster"></div>
+      <div class="modal-rule"></div>
+      <div class="modal-gif-title" id="modal-title"></div>
+      <div class="modal-id" id="modal-id"></div>
+      <a class="modal-link" id="modal-link" href="#" target="_blank" rel="noopener noreferrer">
+        VIEW ON GIPHY ↗
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ABOUT MODAL ══════════ -->
+<div id="about-modal" class="overlay">
+  <div class="modal-box" id="about-modal-box" style="--modal-color: var(--cyan)">
+    <button class="modal-close" id="about-modal-close">[ ESC ]</button>
+
+    <div class="about-title">WHAT IS<br>GAZE ECONOMY?</div>
+
+    <div class="about-rule"></div>
+
+    <div class="about-section-head">// THE CONCEPT</div>
+    <div class="about-body">
+      The internet doesn't just transmit information — it <strong>processes</strong> it
+      into a visual vocabulary. When a crisis, trend, or idea generates enough attention,
+      it gets absorbed into meme culture: mocked, mourned, celebrated and recycled
+      as GIFs. This is the <strong>gaze economy</strong> — the market of collective looking.
+      <br><br>
+      This visualisation asks: <strong>how thoroughly has a concept been codified
+      into visual reflex?</strong> The denser the GIF library for a keyword, the more
+      completely that idea has been processed by internet culture.
+    </div>
+
+    <div class="about-rule"></div>
+
+    <div class="about-section-head">// THE CITY METAPHOR</div>
+    <div class="about-body">
+      Each <strong>column</strong> is a keyword — a building in the city.
+      Its <strong>height</strong> reflects how many GIFs exist for that term (up to 15 visible,
+      drawn from the top 30 results). Taller buildings = deeper cultural codification.
+      <br><br>
+      Buildings are grouped into <strong>districts</strong> by thematic cluster.
+      The ground line is the present moment. Everything above it is what the internet
+      has already absorbed. Scroll horizontally to move through the city.
+      <br><br>
+      <strong>Click any GIF</strong> to expand it and see its source context.
+    </div>
+
+    <div class="about-rule"></div>
+
+    <div class="about-section-head">// THE 7 DISTRICTS</div>
+    <div class="cluster-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ff2255;box-shadow:0 0 6px #ff2255"></div>
+        <div class="legend-text"><strong>CONFLICT</strong><br>Gaza · War · Protest · Ceasefire · Refugee</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#00ffff;box-shadow:0 0 6px #00ffff"></div>
+        <div class="legend-text"><strong>PLATFORM</strong><br>TikTok · Instagram · YouTube · Twitter · Social Media · Going Viral · Scrolling</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ffaa00;box-shadow:0 0 6px #ffaa00"></div>
+        <div class="legend-text"><strong>INFORMATION</strong><br>Fake News · Misinformation · Deepfake · Propaganda · Fact Check</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#00ff88;box-shadow:0 0 6px #00ff88"></div>
+        <div class="legend-text"><strong>TECHNOLOGY</strong><br>AI · ChatGPT · Robot · Surveillance</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#bb44ff;box-shadow:0 0 6px #bb44ff"></div>
+        <div class="legend-text"><strong>POLITICS</strong><br>Trump · Election · Democracy · Censorship</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ff44aa;box-shadow:0 0 6px #ff44aa"></div>
+        <div class="legend-text"><strong>CULTURE</strong><br>Taylor Swift · Celebrity · Influencer · Attention · Boredom</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#00ddaa;box-shadow:0 0 6px #00ddaa"></div>
+        <div class="legend-text"><strong>CLIMATE</strong><br>Climate Change · Flood · Wildfire</div>
+      </div>
+    </div>
+
+    <div class="about-rule"></div>
+
+    <div class="about-section-head">// DATA SOURCE</div>
+    <div class="about-body">
+      GIFs are fetched live from the <strong>GIPHY Search API</strong> (top 30 results
+      per keyword, PG rating). Data also draws on <strong>Wikipedia pageview metrics</strong>
+      and <strong>GDELT news coverage timelines</strong> spanning Oct 2023 – Mar 2026 to
+      contextualise each keyword's attention footprint.
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ═══════════════════════════════════════════
+     CONFIG
+  ═══════════════════════════════════════════ */
+  const API_KEY   = 'cOaguO9vKL1gkViYLUGhaPLsSFRxNzXH';
+  const GIF_LIMIT = 30;
+  const MAX_STACK = 15;
+  const RATING    = 'pg';
+
+  const CLUSTERS = [
+    { name:'CONFLICT',    color:'#ff2255', keywords:['Gaza','War','Protest','Ceasefire','Refugee'] },
+    { name:'PLATFORM',    color:'#00ffff', keywords:['TikTok','Instagram','YouTube','Twitter','Social Media','Going Viral','Scrolling'] },
+    { name:'INFORMATION', color:'#ffaa00', keywords:['Fake News','Misinformation','Deepfake','Propaganda','Fact Check'] },
+    { name:'TECHNOLOGY',  color:'#00ff88', keywords:['AI','ChatGPT','Robot','Surveillance'] },
+    { name:'POLITICS',    color:'#bb44ff', keywords:['Trump','Election','Democracy','Censorship'] },
+    { name:'CULTURE',     color:'#ff44aa', keywords:['Taylor Swift','Celebrity','Influencer','Attention','Boredom'] },
+    { name:'CLIMATE',     color:'#00ddaa', keywords:['Climate Change','Flood','Wildfire'] }
+  ];
+
+  /* ═══════════════════════════════════════════
+     STARFIELD
+  ═══════════════════════════════════════════ */
+  function initStars() {
+    const canvas = document.getElementById('stars-canvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [], W, H;
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      stars = Array.from({ length: 220 }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 1.4 + 0.2,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.45 + 0.15
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      const t = performance.now() / 1000;
+      stars.forEach(s => {
+        const a = (Math.sin(s.phase + t * s.speed) + 1) / 2 * 0.82 + 0.06;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(190,210,255,${a})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    resize(); draw();
+  }
+
+  /* ═══════════════════════════════════════════
+     GIPHY FETCH
+  ═══════════════════════════════════════════ */
+  async function fetchKeyword(kw) {
+    const url =
+      `https://api.giphy.com/v1/gifs/search` +
+      `?api_key=${API_KEY}` +
+      `&q=${encodeURIComponent(kw)}` +
+      `&limit=${GIF_LIMIT}` +
+      `&rating=${RATING}` +
+      `&lang=en`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()).data || [];
+  }
+
+  async function fetchAll(onProgress) {
+    const items = CLUSTERS.flatMap(c => c.keywords.map(kw => ({ kw, cluster: c })));
+    const result = {};
+    let done = 0;
+    const total = items.length;
+    const BATCH = 6;
+
+    for (let i = 0; i < items.length; i += BATCH) {
+      const batch = items.slice(i, i + BATCH);
+      await Promise.all(batch.map(async ({ kw, cluster }) => {
+        try {
+          result[kw] = { gifs: await fetchKeyword(kw), cluster };
+        } catch (err) {
+          console.warn(`Failed "${kw}":`, err);
+          result[kw] = { gifs: [], cluster };
+        }
+        done++;
+        onProgress(done, total, kw);
+      }));
+      if (i + BATCH < items.length) await new Promise(r => setTimeout(r, 180));
+    }
+    return result;
+  }
+
+  /* ═══════════════════════════════════════════
+     GIF SIZE — responsive
+  ═══════════════════════════════════════════ */
+  function computeGifSize() {
+    const headerH = 52;
+    const labelH  = 84;   /* matches --label-h */
+    const padV    = 24 + 10;
+    const avail   = window.innerHeight - headerH - labelH - padV;
+    return Math.max(44, Math.min(74, Math.floor(avail / MAX_STACK)));
+  }
+
+  function applyGifSize() {
+    document.documentElement.style.setProperty('--gif-size', `${computeGifSize()}px`);
+  }
+
+  /* ═══════════════════════════════════════════
+     CITY RENDER
+  ═══════════════════════════════════════════ */
+  function getGifUrls(gif) {
+    const imgs = gif.images || {};
+    const tile =
+      imgs.fixed_height_small?.url ||
+      imgs.fixed_width_small?.url  ||
+      imgs.preview_gif?.url        ||
+      imgs.downsized_small?.url    || '';
+    const full =
+      imgs.fixed_height?.url ||
+      imgs.original?.url     ||
+      imgs.downsized?.url    ||
+      tile;
+    return { tile, full };
+  }
+
+  function renderCity(data) {
+    const city = document.getElementById('city');
+    city.innerHTML = '';
+    let colIdx = 0;
+
+    CLUSTERS.forEach((cluster, ci) => {
+      if (ci > 0) {
+        const sep = document.createElement('div');
+        sep.className = 'cluster-sep';
+        sep.style.color = CLUSTERS[ci - 1].color;
+        city.appendChild(sep);
+      }
+
+      const group = document.createElement('div');
+      group.className = 'cluster-group';
+
+      const cols = document.createElement('div');
+      cols.className = 'cluster-cols';
+
+      cluster.keywords.forEach(kw => {
+        const kwData = data[kw] || { gifs: [] };
+        const gifs   = kwData.gifs.slice(0, MAX_STACK);
+
+        const col = document.createElement('div');
+        col.className = 'kw-col';
+        col.style.animationDelay = `${colIdx++ * 0.04}s`;
+
+        const stack = document.createElement('div');
+        stack.className = 'gif-stack';
+
+        if (gifs.length === 0) {
+          const ph = document.createElement('div');
+          ph.style.cssText =
+            'width:var(--gif-size);height:var(--gif-size);' +
+            'border:1px solid rgba(255,255,255,0.06);' +
+            'background:rgba(255,255,255,0.015);';
+          stack.appendChild(ph);
+        } else {
+          gifs.forEach(gif => {
+            const { tile, full } = getGifUrls(gif);
+            const img = document.createElement('img');
+            img.className = 'gif-tile';
+            img.src       = tile;
+            img.alt       = gif.title || kw;
+            img.loading   = 'lazy';
+            img.dataset.fullUrl  = full;
+            img.dataset.title    = gif.title  || '';
+            img.dataset.id       = gif.id     || '';
+            img.dataset.giphyUrl = gif.url    || '';
+            img.dataset.keyword  = kw;
+            img.dataset.cluster  = cluster.name;
+            img.dataset.color    = cluster.color;
+            img.addEventListener('click', openGifModal);
+            stack.appendChild(img);
+          });
+        }
+
+        /* rotated keyword label */
+        const label = document.createElement('div');
+        label.className   = 'kw-label';
+        label.textContent = kw.toUpperCase();
+        label.title       = kw;
+        label.style.color = cluster.color;
+
+        col.appendChild(stack);
+        col.appendChild(label);
+        cols.appendChild(col);
+      });
+
+      const cName = document.createElement('div');
+      cName.className   = 'cluster-name';
+      cName.textContent = `— ${cluster.name} —`;
+      cName.style.color = cluster.color;
+      cName.style.textShadow = `0 0 8px ${cluster.color}`;
+
+      group.appendChild(cols);
+      group.appendChild(cName);
+      city.appendChild(group);
+    });
+  }
+
+  /* ═══════════════════════════════════════════
+     GIF MODAL
+  ═══════════════════════════════════════════ */
+  function openGifModal(e) {
+    const img   = e.currentTarget;
+    const color = img.dataset.color;
+    const box   = document.getElementById('gif-modal-box');
+
+    document.getElementById('modal-img').src             = img.dataset.fullUrl;
+    document.getElementById('modal-kw').textContent      = img.dataset.keyword.toUpperCase();
+    document.getElementById('modal-kw').style.color      = color;
+    document.getElementById('modal-kw').style.textShadow = `0 0 12px ${color}`;
+    document.getElementById('modal-cluster').textContent  = `[ ${img.dataset.cluster} ]`;
+    document.getElementById('modal-cluster').style.color  = color;
+    document.getElementById('modal-title').textContent    = img.dataset.title || '—';
+    document.getElementById('modal-id').textContent       = `GIF ID: ${img.dataset.id}`;
+    document.getElementById('modal-link').href            = img.dataset.giphyUrl;
+    box.style.setProperty('--modal-color', color);
+
+    document.getElementById('gif-modal').classList.add('active');
+  }
+
+  function closeGifModal() {
+    document.getElementById('gif-modal').classList.remove('active');
+    document.getElementById('modal-img').src = '';
+  }
+
+  /* ═══════════════════════════════════════════
+     ABOUT MODAL
+  ═══════════════════════════════════════════ */
+  function openAboutModal()  { document.getElementById('about-modal').classList.add('active'); }
+  function closeAboutModal() { document.getElementById('about-modal').classList.remove('active'); }
+
+  /* ═══════════════════════════════════════════
+     BOOT
+  ═══════════════════════════════════════════ */
+  initStars();
+  applyGifSize();
+  window.addEventListener('resize', applyGifSize);
+
+  /* Enter button */
+  document.getElementById('enter-btn').addEventListener('click', async () => {
+    const intro = document.getElementById('intro');
+    intro.style.opacity = '0';
+    intro.style.pointerEvents = 'none';
+    setTimeout(() => { intro.style.display = 'none'; }, 1200);
+
+    const loading = document.getElementById('loading');
+    const progBar = document.getElementById('prog-bar');
+    const loadTxt = document.getElementById('load-status');
+    const loadCnt = document.getElementById('load-count');
+    loading.classList.add('active');
+
+    const data = await fetchAll((done, total, kw) => {
+      progBar.style.width = `${(done / total) * 100}%`;
+      loadCnt.textContent = `${done} / ${total}`;
+      loadTxt.textContent = `LOADING: ${kw.toUpperCase()}...`;
+    });
+
+    loading.classList.remove('active');
+    document.getElementById('main').classList.add('active');
+    renderCity(data);
+  });
+
+  /* GIF modal close */
+  document.getElementById('gif-modal-close').addEventListener('click', closeGifModal);
+  document.getElementById('gif-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('gif-modal')) closeGifModal();
+  });
+
+  /* About modal open / close */
+  document.getElementById('eye-btn').addEventListener('click', openAboutModal);
+  document.getElementById('about-modal-close').addEventListener('click', closeAboutModal);
+  document.getElementById('about-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('about-modal')) closeAboutModal();
+  });
+
+  /* Escape closes whichever modal is open */
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    closeGifModal();
+    closeAboutModal();
+  });
+</script>
+</body>
+</html>
